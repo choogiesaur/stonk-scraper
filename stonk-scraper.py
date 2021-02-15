@@ -48,4 +48,4 @@ sentiment = client.analyze_sentiment(request={'document': document}).document_se
 print("Text: {}".format(text))
 print("Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude))
 
-# test signed commit on windows
+# test signed commit on windows FR THIS TIME
