@@ -3,6 +3,8 @@ import tweepy
 import requests
 import simplejson as json
 from google.cloud import language_v1
+import nltk
+nltk.download('punkt')
 from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
 
@@ -55,15 +57,17 @@ analyze_sentiment()
 
 # Test function for NER using Stanford NER tagger
 def entity_recognition():
-    st = StanfordNERTagger('/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz',
-					   '/usr/share/stanford-ner/stanford-ner.jar',
+    st = StanfordNERTagger('/Users/matthewhenderson/Downloads/stanford-ner-2020-11-17/classifiers/english.all.3class.distsim.crf.ser.gz',
+					   '/Users/matthewhenderson/Downloads/stanford-ner-2020-11-17/stanford-ner.jar',
 					   encoding='utf-8')
     for tweet in public_tweets:
         tokenized_text = word_tokenize(tweet.text)
         classified_text = st.tag(tokenized_text)
         print(classified_text)
 
-# entity_recognition()
+entity_recognition()
 
+# Function to pre-process tweets
 def get_tweet(doc):
-# Function to pre-process tweets 
+    tweetItem = {}
+
