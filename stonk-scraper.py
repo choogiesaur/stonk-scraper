@@ -4,9 +4,24 @@ import requests
 import simplejson as json
 from google.cloud import language_v1
 import nltk
+# From Stanford
 nltk.download('punkt')
+# From chunking
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
 from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
+# From chunking
+from nltk.tag import pos_tag
+from nltk.chunk import conlltags2tree, tree2conlltags
+from pprint import pprint
+# Entity (SpaCy)
+import spacy
+from spacy import displacy
+from collections import Counter
+from spacy.matcher import Matcher, PhraseMatcher
+import en_core_web_sm
 
 def get_api():
     # Get environment variables for Twitter API
@@ -26,9 +41,11 @@ api = get_api()
 public_tweets = api.user_timeline('@elonmusk')
 
 # Create list of stonks from stonks.txt
-stonks = []
+stonks = ''
 with open('stonks.txt') as f:
-    stonks = [line.replace('\n','').split('|') for line in f]
+    for line in f:
+        stonks += line    
+#     stonks = [line.replace('\n','') for line in f]
 # print(stonks)
 
 # Old logic for identifying companies in stonks; to be replaced by Stanford NER tagger (entity_recognition function) or Google NLP NER
@@ -37,9 +54,6 @@ with open('stonks.txt') as f:
 #     for company in stonks:
 #         if company[0].lower() in tweet.text.lower() or company[1].lower() in tweet.text.lower():
 #             print('Success', company, tweet.text)
-
-# Old print statement to inspect tweet object
-# print(tweet.__dict__)
 
 def analyze_sentiment():
     # Instantiate client
@@ -55,19 +69,72 @@ def analyze_sentiment():
 
 analyze_sentiment()
 
-# Test function for NER using Stanford NER tagger
-def entity_recognition():
-    st = StanfordNERTagger('/Users/matthewhenderson/Downloads/stanford-ner-2020-11-17/classifiers/english.all.3class.distsim.crf.ser.gz',
-					   '/Users/matthewhenderson/Downloads/stanford-ner-2020-11-17/stanford-ner.jar',
-					   encoding='utf-8')
-    for tweet in public_tweets:
-        tokenized_text = word_tokenize(tweet.text)
-        classified_text = st.tag(tokenized_text)
-        print(classified_text)
+# Token matching using SpaCy for ticker symbols and company names
+def phraseMatching(tweet):
+    nlp = spacy.load("en_core_web_sm")
+    matcher = Matcher(nlp.vocab)
+    terms = []
+    pattern = []
+    temp = ''
+    for stonk in stonks:
+        temp = temp + stonk
+        if stonk == '\n':
+            terms.append(temp.strip('\n'))
+            temp = ''
+    for item in terms:
+        patternDict = {}
+        patternDict["LOWER"] = item.lower()
+        dict_copy = patternDict.copy()
+        temp = []
+        temp.append(dict_copy)
+        pattern.append(temp)
+    print(pattern)
+    # patternTest = [
+    #     [{"LOWER": "spacex"}],
+    #     [{"LOWER": "doge"}]
+    # ]
+    patterns = [nlp.make_doc(text) for text in terms]
+    matcher.add("Match_By_Token", pattern)
+    doc = nlp(tweet)
+    matches = matcher(doc)
+    matchedTokens = []
+    for match_id, start, end in matches:
+        span = doc[start:end]
+        matchedTokens.append(span.text)
+    print(matchedTokens)
 
-entity_recognition()
+for tweet in public_tweets:
+    print(tweet.text)
+    phraseMatching(tweet.text)
 
-# Function to pre-process tweets
-def get_tweet(doc):
-    tweetItem = {}
+# Previous testing using tokenizing and NLTK library
 
+# Test function for tokenizing words
+def preprocess(tweet):
+    for tweet in tweet:
+        tokenized_text = nltk.word_tokenize(tweet.text)
+        classified_text = nltk.pos_tag(tokenized_text)
+        return classified_text
+
+tweets = preprocess(public_tweets)
+print(tweets)
+
+# Noun chunking. The rule applied is a noun phrase is formed when an optional determiner is found, followed
+# by either an adjective or a noun.
+pattern = 'NP: {<DT>?<JJ>*<NN>}'
+pat = nltk.RegexpParser(pattern)
+new_pat = pat.parse(tweets)
+# print(new_pat)
+# Format chunks of stonks
+iob_tagged = tree2conlltags(new_pat)
+# pprint(iob_tagged)
+
+# Recognize named entities in chunks using ne_chunk()
+# for tweet in public_tweets:
+#     ne_tree = nltk.ne_chunk(pos_tag(word_tokenize(tweet.text)))
+#     print(ne_tree)
+
+# for tweet in public_tweets:
+#     doc = nlp(tweet.text)
+#     # pprint([(X.text, X.label_) for X in doc.ents])
+#     pprint([(X, X.ent_iob_, X.ent_type_) for X in doc])

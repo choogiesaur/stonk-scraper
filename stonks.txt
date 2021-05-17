@@ -1,100 +1,200 @@
-KIRK|Kirkland's Inc
-KOPN|Kopin Cp
-FUTU|Futu Holdings Ltd
-MVIS|Microvision
-SI|Silvergate Capital Corp Cl A
-EXPI|Exp Realty International
-RIOT|Riot Blockchain Inc
-DNM.W|Danimer Scientific Inc WT
-NMCI|Navios Maritime Containers L.P.
-OPRX|Optimizerx Corp
-OSTK|Overstock.com Inc
-PACB|Pacific Biosciences
-FLGT|Fulgent Genetics Inc
-MSTR|Microstrategy Cl A
-FVRR|Fiverr International Ltd
-CELH|Celsius Holdings Inc
-AMTX|Aemetis Inc
-AQMS|Aqua Metals Inc
-EMAN|Emagin Corp
-MP.W|Mp Materials Corp WT
-MWK|Mohawk Group Holdings Inc
-GROW|U S Global Inv Inc
-CMBM|Cambium Networks Corp
-STKL|Sunopta Inc
-WPRT|Westport Fuel Systems Inc
-GRWG|Growgeneration Corp
-RSI.W|Rush Street Interactive Inc WT
-NIO|Nio Inc
-BTRSW|Btrs Holdings Inc WT
-EXPCW|Experience Investment Corp Warrants
-PLUG|Plug Power Inc
-KSPN|Kaspien Holdings Inc
-TIGR|Up Fintech Holding Ltd ADR
-APPHW|Appharvest Inc WT
-VERI|Veritone Inc
-AMRS|Amyris Inc
-PRTS|U.S. Auto Parts Netw
-DAC|Danaos Corp
-SE|Sea Ltd ADR
-CTRN|Citi Trends Inc
-SAVA|Cassava Sciences Inc
-CLSK|Cleanspark Inc
-NK|Nantkwest Inc CS
-DQ|Daqo New Energy
-LOVE|The Lovesac Company
-ZDGE|Zedge Inc Cl B
-CRNC|Cerence Inc
-UUUU|Energy Fuels Inc
-BGFV|Big 5 Sporting
-BRN|Barnwell Industries
-BILI|Bilibili Inc ADR
-ALTO|Alto Ingredients Inc
-DNMR|Danimer Scientific Inc
-ROCHW|Roth Ch Acquisition I CO WT
-LODE|Comstock Mining Inc
-FTCH|Farfetch Ltd Cl A
-VCEL|Vericel Corproation
-PLSE|Pulse Biosciences CS
-NLS|Nautilus Group
-TCS|The Container Store Group Inc
-TSLA|Tesla Inc
-ATOM|Atomera Inc
-CCA.W|Citic Capital Acquisition [Ccac/W]
-OCX|Oncocyte Corp
-EPIX|Essa Pharma
-AWH|Aspira Womans Health Inc
-AOSL|Alpha and Omega Semi
-AVNW|Aviat Networks Inc
-SBE.W|Switchback Energy Acquisition Corp WT
-FCX|Freeport-Mcmoran Inc
-PDD|Pinduoduo Inc ADR
-DXYN|The Dixie Group
-VSTO|Vista Outdoor Inc
-TWST|Twist Bioscience Corp
-MP|Mp Materials Corp
-BXC|Bluelinx Holdings Inc
-ANVS|Annovis Bio Inc
-TGC|Tengasco Inc
-CREG|China Recycling Ener
-BEAM|Beam Therapeutics Inc
-APPS|Digital Turbine
-HYRE|Hyrecar Inc
-CURIW|Curiositystream Inc WT
-HEAR|Turtle Beach Corp
-KTRA|Kintara Therapeutics Inc
-UPWK|Upwork Inc
-PTON|Peloton Interactive Inc
-UMC|United Microelectronics Corp
-APHA|Aphria Inc
-BWMX|Betterware DE Mexico Da DE Cv
-DMTK|Dermtech Inc
-PINS|Pinterest Inc
-TTGT|Techtarget Inc
-ROKU|Roku Inc
-FCEL|Fuelcell Energy Inc
-CRWD|Crowdstrike Holdings Inc
-ZKIN|Zk International Group CO Ltd
-VOXX|Voxx Intl Corp
-IPV.W|Interprivate Acquisition Corp WT
-PAR|Par Technology Corp
+KIRK
+Kirkland's Inc
+KOPN
+Kopin Cp
+FUTU
+Futu Holdings Ltd
+MVIS
+Microvision
+SI
+Silvergate Capital Corp Cl A
+EXPI
+Exp Realty International
+RIOT
+Riot Blockchain Inc
+DNM.W
+Danimer Scientific Inc WT
+NMCI
+Navios Maritime Containers L.P.
+OPRX
+Optimizerx Corp
+OSTK
+Overstock.com Inc
+PACB
+Pacific Biosciences
+FLGT
+Fulgent Genetics Inc
+MSTR
+Microstrategy Cl A
+FVRR
+Fiverr International Ltd
+CELH
+Celsius Holdings Inc
+AMTX
+Aemetis Inc
+AQMS
+Aqua Metals Inc
+EMAN
+Emagin Corp
+MP.W
+Mp Materials Corp WT
+MWK
+Mohawk Group Holdings Inc
+GROW
+U S Global Inv Inc
+CMBM
+Cambium Networks Corp
+STKL
+Sunopta Inc
+WPRT
+Westport Fuel Systems Inc
+GRWG
+Growgeneration Corp
+RSI.W
+Rush Street Interactive Inc WT
+NIO
+Nio Inc
+BTRSW
+Btrs Holdings Inc WT
+EXPCW
+Experience Investment Corp Warrants
+PLUG
+Plug Power Inc
+KSPN
+Kaspien Holdings Inc
+TIGR
+Up Fintech Holding Ltd ADR
+APPHW
+Appharvest Inc WT
+VERI
+Veritone Inc
+AMRS
+Amyris Inc
+PRTS
+U.S. Auto Parts Netw
+DAC
+Danaos Corp
+SE
+Sea Ltd ADR
+CTRN
+Citi Trends Inc
+SAVA
+Cassava Sciences Inc
+CLSK
+Cleanspark Inc
+NK
+Nantkwest Inc CS
+DQ
+Daqo New Energy
+LOVE
+The Lovesac Company
+ZDGE
+Zedge Inc Cl B
+CRNC
+Cerence Inc
+UUUU
+Energy Fuels Inc
+BGFV
+Big 5 Sporting
+BRN
+Barnwell Industries
+BILI
+Bilibili Inc ADR
+ALTO
+Alto Ingredients Inc
+DNMR
+Danimer Scientific Inc
+ROCHW
+Roth Ch Acquisition I CO WT
+LODE
+Comstock Mining Inc
+FTCH
+Farfetch Ltd Cl A
+VCEL
+Vericel Corproation
+PLSE
+Pulse Biosciences CS
+NLS
+Nautilus Group
+TCS
+The Container Store Group Inc
+TSLA
+Tesla Inc
+ATOM
+Atomera Inc
+CCA.W
+Citic Capital Acquisition [Ccac/W]
+OCX
+Oncocyte Corp
+EPIX
+Essa Pharma
+AWH
+Aspira Womans Health Inc
+AOSL
+Alpha and Omega Semi
+AVNW
+Aviat Networks Inc
+SBE.W
+Switchback Energy Acquisition Corp WT
+FCX
+Freeport-Mcmoran Inc
+PDD
+Pinduoduo Inc ADR
+DXYN
+The Dixie Group
+VSTO
+Vista Outdoor Inc
+TWST
+Twist Bioscience Corp
+MP
+Mp Materials Corp
+BXC
+Bluelinx Holdings Inc
+ANVS
+Annovis Bio Inc
+TGC
+Tengasco Inc
+CREG
+China Recycling Ener
+BEAM
+Beam Therapeutics Inc
+APPS
+Digital Turbine
+HYRE
+Hyrecar Inc
+CURIW
+Curiositystream Inc WT
+HEAR
+Turtle Beach Corp
+KTRA
+Kintara Therapeutics Inc
+UPWK
+Upwork Inc
+PTON
+Peloton Interactive Inc
+UMC
+United Microelectronics Corp
+APHA
+Aphria Inc
+BWMX
+Betterware DE Mexico Da DE Cv
+DMTK
+Dermtech Inc
+PINS
+Pinterest Inc
+TTGT
+Techtarget Inc
+ROKU
+Roku Inc
+FCEL
+Fuelcell Energy Inc
+CRWD
+Crowdstrike Holdings Inc
+ZKIN
+Zk International Group CO Ltd
+VOXX
+Voxx Intl Corp
+IPV.W
+Interprivate Acquisition Corp WT
+PAR
+Par Technology Corp
