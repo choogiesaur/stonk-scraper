@@ -4,19 +4,6 @@ import requests
 import simplejson as json
 from google.cloud import language_v1
 import nltk
-# From Stanford
-nltk.download('punkt')
-# From chunking
-nltk.download('averaged_perceptron_tagger')
-nltk.download('maxent_ne_chunker')
-nltk.download('words')
-from nltk.tag import StanfordNERTagger
-from nltk.tokenize import word_tokenize
-# From chunking
-from nltk.tag import pos_tag
-from nltk.chunk import conlltags2tree, tree2conlltags
-from pprint import pprint
-# Entity (SpaCy)
 import spacy
 from spacy import displacy
 from collections import Counter
@@ -73,27 +60,37 @@ analyze_sentiment()
 def phraseMatching(tweet):
     nlp = spacy.load("en_core_web_sm")
     matcher = Matcher(nlp.vocab)
+    # Empty list of stonk terms to match to
     terms = []
+    # Empty list to be used for appending list of dictionaries
     pattern = []
     temp = ''
+    # Create the list of stonks
     for stonk in stonks:
         temp = temp + stonk
         if stonk == '\n':
             terms.append(temp.strip('\n'))
             temp = ''
+    # Create a pattern dictionary for each symbol or stock name
     for item in terms:
         patternDict = {}
-        patternDict["LOWER"] = item.lower()
-        dict_copy = patternDict.copy()
-        temp = []
-        temp.append(dict_copy)
-        pattern.append(temp)
+        if ' ' in item:
+            splitList = item.split(' ')
+            temp = []
+            for item in splitList:
+                patternDict["LOWER"] = item.lower()
+                dict_copy = patternDict.copy()
+                temp.append(dict_copy)
+                if item == splitList[-1]:
+                    pattern.append(temp)
+        else:
+            patternDict["LOWER"] = item.lower()
+            dict_copy = patternDict.copy()
+            temp = []
+            temp.append(dict_copy)
+            pattern.append(temp)
     print(pattern)
-    # patternTest = [
-    #     [{"LOWER": "spacex"}],
-    #     [{"LOWER": "doge"}]
-    # ]
-    patterns = [nlp.make_doc(text) for text in terms]
+    # patterns = [nlp.make_doc(text) for text in terms]
     matcher.add("Match_By_Token", pattern)
     doc = nlp(tweet)
     matches = matcher(doc)
@@ -106,35 +103,3 @@ def phraseMatching(tweet):
 for tweet in public_tweets:
     print(tweet.text)
     phraseMatching(tweet.text)
-
-# Previous testing using tokenizing and NLTK library
-
-# Test function for tokenizing words
-def preprocess(tweet):
-    for tweet in tweet:
-        tokenized_text = nltk.word_tokenize(tweet.text)
-        classified_text = nltk.pos_tag(tokenized_text)
-        return classified_text
-
-tweets = preprocess(public_tweets)
-print(tweets)
-
-# Noun chunking. The rule applied is a noun phrase is formed when an optional determiner is found, followed
-# by either an adjective or a noun.
-pattern = 'NP: {<DT>?<JJ>*<NN>}'
-pat = nltk.RegexpParser(pattern)
-new_pat = pat.parse(tweets)
-# print(new_pat)
-# Format chunks of stonks
-iob_tagged = tree2conlltags(new_pat)
-# pprint(iob_tagged)
-
-# Recognize named entities in chunks using ne_chunk()
-# for tweet in public_tweets:
-#     ne_tree = nltk.ne_chunk(pos_tag(word_tokenize(tweet.text)))
-#     print(ne_tree)
-
-# for tweet in public_tweets:
-#     doc = nlp(tweet.text)
-#     # pprint([(X.text, X.label_) for X in doc.ents])
-#     pprint([(X, X.ent_iob_, X.ent_type_) for X in doc])
