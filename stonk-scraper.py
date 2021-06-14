@@ -3,14 +3,12 @@ import tweepy
 import requests
 import simplejson as json
 from google.cloud import language_v1
-import nltk
 import spacy
 from spacy import displacy
 from collections import Counter
-from spacy.matcher import Matcher, PhraseMatcher
-import en_core_web_sm
+from spacy.matcher import Matcher
 
-def get_api():
+def getApi():
     # Get environment variables for Twitter API
     consumer_key 	= os.getenv('TWITTER_API_KEY')
     consumer_secret = os.getenv('TWITTER_API_KEY_SECRET')
@@ -22,31 +20,22 @@ def get_api():
     api = tweepy.API(auth)
     return api
 
-api = get_api()
+api = getApi()
 
-# Gather tweets from Elon Musk's timeline
-public_tweets = api.user_timeline('@elonmusk')
+# Gather tweets from Elon Musk's timeline; to be made generic in the future
+publicTweets = api.user_timeline('@elonmusk')
 
 # Create list of stonks from stonks.txt
 stonks = ''
 with open('stonks.txt') as f:
     for line in f:
         stonks += line    
-#     stonks = [line.replace('\n','') for line in f]
-# print(stonks)
 
-# Old logic for identifying companies in stonks; to be replaced by Stanford NER tagger (entity_recognition function) or Google NLP NER
-# for tweet in public_tweets:
-#     print(tweet.text)
-#     for company in stonks:
-#         if company[0].lower() in tweet.text.lower() or company[1].lower() in tweet.text.lower():
-#             print('Success', company, tweet.text)
-
-def analyze_sentiment():
+def analyzeSentiment():
     # Instantiate client
     client = language_v1.LanguageServiceClient()
     # Pass in text to analyze from stonks
-    for tweet in public_tweets:
+    for tweet in publicTweets:
         print(tweet.text)
         document = language_v1.Document(content=tweet.text, type_=language_v1.Document.Type.PLAIN_TEXT)
         # Detect tweet sentiment
@@ -54,43 +43,70 @@ def analyze_sentiment():
         print("Text: {}".format(tweet.text))
         print("Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude))
 
-analyze_sentiment()
+analyzeSentiment()
 
-# Token matching using SpaCy for ticker symbols and company names
-def phraseMatching(tweet):
-    nlp = spacy.load("en_core_web_sm")
-    matcher = Matcher(nlp.vocab)
-    # Empty list of stonk terms to match to
-    terms = []
-    # Empty list to be used for appending list of dictionaries
-    pattern = []
+# Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
+stonkList = []
+
+def createStonkList():
+    # Create a list of strings where each string is an individual stonk
     temp = ''
-    # Create the list of stonks
     for stonk in stonks:
         temp = temp + stonk
         if stonk == '\n':
-            terms.append(temp.strip('\n'))
+            stonkList.append(temp.strip('\n'))
             temp = ''
+
+createStonkList()
+
+# Empty array to add patterns that will be used for token matching with spaCy library
+pattern = []
+
+def createPattern(stonkList):
     # Create a pattern dictionary for each symbol or stock name
-    for item in terms:
+    for item in stonkList:
+        # Empty dictionary for pattern creation
         patternDict = {}
+        # Check to see if there is a space in the company name
         if ' ' in item:
             splitList = item.split(' ')
             temp = []
             for item in splitList:
+                # Create dictionary list where each word in the company name is a value in its own dictionary
+                # Copied so multiple dictionaries with the same key "lower" can be created
                 patternDict["LOWER"] = item.lower()
                 dict_copy = patternDict.copy()
                 temp.append(dict_copy)
                 if item == splitList[-1]:
                     pattern.append(temp)
+                # Create pattern for company name in the form of a twitter handle
+                patternDict["LOWER"] = '@' + item.lower()
+                dict_copy_handle = patternDict.copy()
+                tempHandle = []
+                tempHandle.append(dict_copy_handle)
+                pattern.append(tempHandle)
+                tempHandle = []
+        # Pattern for all companies without space in name
         else:
+            # Create pattern for single word company; copied so multiple dictionaries with same key can be created
             patternDict["LOWER"] = item.lower()
             dict_copy = patternDict.copy()
             temp = []
             temp.append(dict_copy)
             pattern.append(temp)
-    print(pattern)
-    # patterns = [nlp.make_doc(text) for text in terms]
+            # Create pattern for single word company as Twitter handle
+            patternDict["LOWER"] = '@' + item.lower()
+            dict_copy_handle = patternDict.copy()
+            temp = []
+            temp.append(dict_copy_handle)
+            pattern.append(temp)
+
+createPattern(stonkList)
+
+# Main token matching function using spaCy for ticker symbols and company names
+def tokenMatching(tweet, pattern):
+    nlp = spacy.load("en_core_web_sm")
+    matcher = Matcher(nlp.vocab)
     matcher.add("Match_By_Token", pattern)
     doc = nlp(tweet)
     matches = matcher(doc)
@@ -98,8 +114,10 @@ def phraseMatching(tweet):
     for match_id, start, end in matches:
         span = doc[start:end]
         matchedTokens.append(span.text)
-    print(matchedTokens)
+    if matchedTokens:
+        print(matchedTokens)
 
-for tweet in public_tweets:
+# Matching for tweets
+for tweet in publicTweets:
     print(tweet.text)
-    phraseMatching(tweet.text)
+    tokenMatching(tweet.text, pattern)
