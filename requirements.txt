@@ -1,0 +1,6 @@
+Flask==2.0.1
+tweepy==3.10.0
+requests==2.26.0
+simplejson==3.17.2
+google.cloud==0.34.0
+spacy==3.0.0
