@@ -7,7 +7,12 @@ import spacy
 from spacy import displacy
 from collections import Counter
 from spacy.matcher import Matcher
+from flask import Flask
+import subprocess
 
+app = Flask(__name__)
+
+@app.route("/")
 def getApi():
     # Get environment variables for Twitter API
     consumer_key 	= os.getenv('TWITTER_API_KEY')
@@ -43,7 +48,7 @@ def analyzeSentiment():
         print("Text: {}".format(tweet.text))
         print("Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude))
 
-analyzeSentiment()
+# analyzeSentiment()
 
 # Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
 stonkList = []
@@ -121,3 +126,6 @@ def tokenMatching(tweet, pattern):
 for tweet in publicTweets:
     print(tweet.text)
     tokenMatching(tweet.text, pattern)
+
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=5000, debug=True)

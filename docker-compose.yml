@@ -1,9 +1,10 @@
-version: "3.7"
+version: "2"
 services:
   app:
-    build: .
+    build: ./app
+    container_name: "stonk_scraper"
     command: python stonk-scraper.py
     ports:
       - "5000:5000"
-    volumes:
-      - .:/stonk-scraper
+    # volumes:
+    #   - .:/stonk-scraper
