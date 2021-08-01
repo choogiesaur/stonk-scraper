@@ -8,7 +8,6 @@ from spacy import displacy
 from collections import Counter
 from spacy.matcher import Matcher
 from flask import Flask
-import subprocess
 
 app = Flask(__name__)
 
