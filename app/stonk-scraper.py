@@ -8,10 +8,13 @@ from spacy import displacy
 from collections import Counter
 from spacy.matcher import Matcher
 from flask import Flask
+# from config import basedir
 
 app = Flask(__name__)
 
 @app.route("/")
+# @app.config.from_pyfile('config.py')
+
 def getApi():
     # Get environment variables for Twitter API
     consumer_key 	= os.getenv('TWITTER_API_KEY')

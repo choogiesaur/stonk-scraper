@@ -6,6 +6,7 @@ ADD . /app
 WORKDIR /app
 
 COPY requirements.txt /app
+# COPY ./lib /app
 ENV variables.env /stonk-scraper
 RUN pip install -r requirements.txt --upgrade pip
 
