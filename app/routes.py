@@ -9,7 +9,7 @@ def home():
         {'name': 'Demo', 'url': 'demo.html'}
     ]
     return render_template(
-        'layout.html',
+        'index.html',
         title="Stonk Scraper",
         description="A natural language processing web app that evaluates sentiment of Elon's twitter feed to determine if stonk will go up or down."
     )
