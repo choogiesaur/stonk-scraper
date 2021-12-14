@@ -3,5 +3,6 @@ p {
 }
 
 .nav-links {
-    color: red;
+    color: blue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

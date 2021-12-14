@@ -1,7 +1,9 @@
 import os
 import tweepy
 import requests
+import json as simplejason
 import simplejson as json
+import google
 from google.cloud import language_v1
 import spacy
 from spacy import displacy
@@ -17,6 +19,7 @@ app = Flask(__name__)
 def home():
     """Landing page."""
     nav = [
+        # {'name': 'Home', 'url': 'index.html'},
         {'name': 'Live', 'url': 'live.html'},
         {'name': 'Demo', 'url': 'demo.html'}
     ]
@@ -30,6 +33,7 @@ def home():
 def live():
     """Live page."""
     nav = [
+        # {'name': 'Home', 'url': 'index.html'},
         {'name': 'Live', 'url': 'live.html'},
         {'name': 'Demo', 'url': 'demo.html'}
     ]
@@ -44,6 +48,7 @@ def live():
 def demo():
     """Demo page."""
     nav = [
+        # {'name': 'Home', 'url': 'index.html'},
         {'name': 'Live', 'url': 'live.html'},
         {'name': 'Demo', 'url': 'demo.html'}
     ]
@@ -53,6 +58,8 @@ def demo():
         description="Demo scraper for Elon's twitter feed."
     )
 
+
+# app.globals.update(clever_function=tokenMatching)
 # @app.config.from_pyfile('config.py')
 
 def getApi():
@@ -70,7 +77,8 @@ def getApi():
 api = getApi()
 
 # Gather tweets from Elon Musk's timeline; to be made generic in the future
-publicTweets = api.user_timeline('@elonmusk')
+user = '@elonmusk'
+publicTweets = api.user_timeline(screen_name = user)
 
 # Create list of stonks from stonks.txt
 stonks = ''
@@ -163,6 +171,9 @@ def tokenMatching(tweet, pattern):
         matchedTokens.append(span.text)
     if matchedTokens:
         print(matchedTokens)
+
+app.jinja_env.globals.update(clever_function=tokenMatching)
+
 
 # Matching for tweets
 for tweet in publicTweets:
