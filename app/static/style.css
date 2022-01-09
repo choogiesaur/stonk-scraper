@@ -1,8 +1,21 @@
+h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    left: 50%;
+}
+
 p {
     color: blue;
 }
 
 .nav-links {
-    color: blue;
+    color: black;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    position: relative;
+    left: 50%;
+    /* margin: 0 0 ; */
+    /* padding: 10px 10px 10px 10px; */
 }
