@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt --upgrade pip
 
 COPY . /app
 
-CMD python stonk-scraper.py
+CMD flask run --host 0.0.0.0
