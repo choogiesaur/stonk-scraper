@@ -1,4 +1,5 @@
 import os
+from re import template
 import tweepy
 import requests
 import json as simplejason
@@ -9,11 +10,18 @@ import spacy
 from spacy import displacy
 from collections import Counter
 from spacy.matcher import Matcher
-from flask import Flask
+from flask import Flask, render_template
 from flask import current_app as app
-from flask import render_template
+from google.oauth2 import service_account
+# import routes
 
 app = Flask(__name__)
+app.config.from_pyfile('config.py')
+
+# app.add_url_rule('/', view_func=routes.home)
+# app.add_url_rule('/live', view_func=routes.live)
+# app.add_url_rule('/demo', view_func=routes.demo)
+# app.add_url_rule('/info', view_func=routes.info)
 
 @app.route('/')
 def home():
@@ -99,7 +107,8 @@ with open('stonks.txt') as f:
 
 def analyzeSentiment():
     # Instantiate client
-    client = language_v1.LanguageServiceClient()
+    credentials = service_account.Credentials.from_service_account_file('stonk_google_creds.json')
+    client = language_v1.LanguageServiceClient(credentials=credentials)
     # Pass in text to analyze from stonks
     for tweet in publicTweets:
         print(tweet.text)
@@ -208,4 +217,4 @@ for tweet in publicTweets:
 #         return dict(tweets=tweets)
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=True)
