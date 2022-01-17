@@ -1,5 +1,7 @@
+from flask import render_template, Flask
 from flask import current_app as app
-from flask import render_template
+
+app = Flask(__name__)
 
 @app.route('/')
 def home():
@@ -8,7 +10,6 @@ def home():
         {'name': 'Live', 'url': 'live.html'},
         {'name': 'Demo', 'url': 'demo.html'},
         {'name': 'Info', 'url': 'info.html'}
-
     ]
     return render_template(
         'index.html',
