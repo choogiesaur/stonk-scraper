@@ -18,3 +18,5 @@ google-cloud-language
 click==7.0
 ./lib/en_core_web_sm-3.0.0.tar.gz
 google-auth
+python-dotenv
+flask-sqlalchemy
