@@ -4,6 +4,7 @@ class Stonks(db.Model):
     """Data model for stonks and their ticker symbols."""
 
     __tablename__ = 'stonks-and-ticker-symbols'
+    
     id = db.Column(
         db.Integer,
         primary_key=True
@@ -20,12 +21,3 @@ class Stonks(db.Model):
         unique=True,
         nullable=False
     )
-    created = db.Column(
-        db.DateTime,
-        index=False,
-        unique=False,
-        nullable=False
-    )
-
-    def __repr__(self):
-        return '<Stonk {}>'.format(self.stock)
