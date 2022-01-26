@@ -10,10 +10,12 @@ import spacy
 from spacy import displacy
 from collections import Counter
 from spacy.matcher import Matcher
-from flask import Flask, render_template
+from flask import Flask
 from flask import current_app as app
 from google.oauth2 import service_account
 import routes
+from flask_sqlalchemy import SQLAlchemy
+from models import Stonks
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')

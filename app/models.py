@@ -1,9 +1,8 @@
-from . import db
+from __init__ import db
+from sqlalchemy.dialects.postgresql import JSON
 
 class Stonks(db.Model):
-    """Data model for stonks and their ticker symbols."""
-
-    __tablename__ = 'stonks-and-ticker-symbols'
+    __tablename__ = 'stonk'
     
     id = db.Column(
         db.Integer,
@@ -21,3 +20,10 @@ class Stonks(db.Model):
         unique=True,
         nullable=False
     )
+
+    def __init__(self, stonk, ticker):
+        self.stonk = stonk
+        self.ticker = ticker
+
+    def __repr__(self):
+        return '<id {}>'.format(self.id)
