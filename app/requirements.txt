@@ -21,5 +21,5 @@ google-auth
 python-dotenv
 flask-sqlalchemy
 psycopg2
-flask-script
-flask-migrate
+flask-script==2.0.6
+flask-migrate==2.1.1

@@ -1,5 +1,8 @@
-from __init__ import db
-from sqlalchemy.dialects.postgresql import JSON
+# from __init__ import db
+# from sqlalchemy.dialects.postgresql import JSON
+import flask_sqlalchemy
+
+db = flask_sqlalchemy.SQLAlchemy()
 
 class Stonks(db.Model):
     __tablename__ = 'stonk'
