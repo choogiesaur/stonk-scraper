@@ -7,3 +7,9 @@ services:
     ports:
       - "5000:5000"
     env_file: variables.env
+  database:
+    container_name: postgres
+    image: postgres:latest
+    env_file: variables.env
+    ports:
+      - 5432:5432

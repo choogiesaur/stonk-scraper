@@ -14,8 +14,6 @@ from flask import Flask
 from flask import current_app as app
 from google.oauth2 import service_account
 import routes
-from flask_sqlalchemy import SQLAlchemy
-from models import Stonks
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')

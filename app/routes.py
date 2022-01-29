@@ -1,7 +1,10 @@
-from flask import render_template, Flask
+from flask import render_template, Flask, request
 from flask import current_app as app
+from models import Stonks, db
+import json
+from __init__ import create_app
 
-app = Flask(__name__)
+app = create_app()
 
 @app.route('/')
 def home():
@@ -59,3 +62,28 @@ def info():
         title="Stonk Scraper",
         description="Demo scraper for Elon's twitter feed."
     )
+
+@app.route('/fetch-stonks', methods=['GET'])
+def fetch():
+    stonks = Stonks.query.all()
+    all_stonks = []
+    for stonk in stonks:
+        new_stonk = {
+            "id": stonk.id,
+            "stonk": stonk.stonk,
+            "ticker": stonk.ticker
+        }
+
+        all_stonks.append(new_stonk)
+    return json.dumps(all_stonks), 200
+
+@app.route('/add-stonks', methods=['POST'])
+def add():
+    data = request.get_json()
+    stonk = data['stonk']
+    ticker = data['ticker']
+    
+    new_stonk = Stonks(stonk=stonk, ticker=ticker)
+    db.session.add(new_stonk)
+    db.session.commit()
+    return json.dumps("Successfully added"), 200
