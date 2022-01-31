@@ -66,16 +66,13 @@ def info():
 @app.route('/fetch-stonks', methods=['GET'])
 def fetch():
     stonks = Stonks.query.all()
-    all_stonks = []
-    for stonk in stonks:
-        new_stonk = {
+    results = [
+        {
             "id": stonk.id,
-            "stonk": stonk.stonk,
-            "ticker": stonk.ticker
-        }
-
-        all_stonks.append(new_stonk)
-    return json.dumps(all_stonks), 200
+            "ticker": stonk.ticker,
+            "stonk": stonk.stonk
+        } for stonk in stonks]
+    return {"stonks": results}, 200
 
 @app.route('/add-stonks', methods=['POST'])
 def add():
