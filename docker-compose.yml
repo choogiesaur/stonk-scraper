@@ -3,7 +3,7 @@ services:
   app:
     build: ./app
     container_name: "stonk_scraper"
-    command: python stonk-scraper.py
+    command: python stonk_scraper.py
     ports:
       - "5000:5000"
     env_file: variables.env

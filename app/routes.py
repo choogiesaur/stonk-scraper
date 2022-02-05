@@ -1,4 +1,4 @@
-from flask import render_template, Flask, request
+from flask import Response, render_template, Flask, request
 from flask import current_app as app
 from models import Stonks, db
 import json
@@ -9,11 +9,6 @@ app = create_app()
 @app.route('/')
 def home():
     """Landing page."""
-    nav = [
-        {'name': 'Live', 'url': 'live.html'},
-        {'name': 'Demo', 'url': 'demo.html'},
-        {'name': 'Info', 'url': 'info.html'}
-    ]
     return render_template(
         'index.html',
         title="Stonk Scraper",
@@ -23,11 +18,6 @@ def home():
 @app.route('/live', methods=['GET', 'POST', 'PUT'])
 def live():
     """Live page."""
-    nav = [
-        {'name': 'Live', 'url': 'live.html'},
-        {'name': 'Demo', 'url': 'demo.html'},
-        {'name': 'Info', 'url': 'info.html'}
-    ]
     return render_template(
         'live.html',
         title="Stonk Scraper",
@@ -38,11 +28,6 @@ def live():
 @app.route('/demo', methods=['GET', 'POST', 'PUT'])
 def demo():
     """Demo page."""
-    nav = [
-        {'name': 'Live', 'url': 'live.html'},
-        {'name': 'Demo', 'url': 'demo.html'},
-        {'name': 'Info', 'url': 'info.html'}
-    ]
     return render_template(
         'demo.html',
         title="Stonk Scraper",
@@ -52,11 +37,6 @@ def demo():
 @app.route('/info', methods=['GET', 'POST', 'PUT'])
 def info():
     """Info page."""
-    nav = [
-        {'name': 'Live', 'url': 'live.html'},
-        {'name': 'Demo', 'url': 'demo.html'},
-        {'name': 'Info', 'url': 'info.html'}
-    ]
     return render_template(
         'info.html',
         title="Stonk Scraper",
@@ -68,11 +48,12 @@ def fetch():
     stonks = Stonks.query.all()
     results = [
         {
-            "id": stonk.id,
             "ticker": stonk.ticker,
             "stonk": stonk.stonk
-        } for stonk in stonks]
-    return {"stonks": results}, 200
+        } for stonk in stonks if stonk is not None]
+    json_dumps = json.dumps(results)
+    resp = Response(json_dumps, status=200, mimetype='application/json')
+    return resp
 
 @app.route('/add-stonks', methods=['POST'])
 def add():
