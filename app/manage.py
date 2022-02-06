@@ -12,5 +12,9 @@ manager = Manager(app)
 
 manager.add_command('db', MigrateCommand)
 
+def get(model):
+    data = model.query.all()
+    return data
+
 if __name__ == '__main__':
     manager.run()
