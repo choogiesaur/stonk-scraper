@@ -121,7 +121,7 @@ def createPattern(stonkList):
 
 createPattern(stonkList)
 
-# Main token matching function using spaCy for ticker symbols and company names
+# Main token matching function using spacy for ticker symbols and company names
 def tokenMatching(tweet, pattern):
     nlp = spacy.load("en_core_web_sm")
     matcher = Matcher(nlp.vocab)

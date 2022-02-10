@@ -1,0 +1,768 @@
+id,ticker,stonk
+1,AAL,American Airlines Group Inc. Common Stock
+2,AAON,AAON Inc. Common Stock
+3,AAPL,Apple Inc. Common Stock
+4,AAWW,Atlas Air Worldwide Holdings NEW Common Stock
+5,ABCB,Ameris Bancorp Common Stock
+6,ABCL,AbCellera Biologics Inc. Common Shares
+7,ABCM,Abcam plc American Depositary Shares
+8,ABMD,ABIOMED Inc. Common Stock
+9,ABNB,Airbnb Inc. Class A Common Stock
+10,ACAD,ACADIA Pharmaceuticals Inc. Common Stock
+11,ACGL,Arch Capital Group Ltd. Common Stock
+12,ACHC,Acadia Healthcare Company Inc. Common Stock
+13,ACIW,ACI Worldwide Inc. Common Stock
+14,ACT,Enact Holdings Inc. Common Stock
+15,ADBE,Adobe Inc. Common Stock
+16,ADI,Analog Devices Inc. Common Stock
+17,ADP,Automatic Data Processing Inc. Common Stock
+18,ADPT,Adaptive Biotechnologies Corporation Common Stock
+19,ADSK,Autodesk Inc. Common Stock
+20,ADV,Advantage Solutions Inc. Class A Common Stock
+21,AEIS,Advanced Energy Industries Inc. Common Stock
+22,AEP,American Electric Power Company Inc. Common Stock
+23,AFRM,Affirm Holdings Inc. Class A Common Stock
+24,AGNC,AGNC Investment Corp. Common Stock
+25,AHCO,AdaptHealth Corp. Common Stock
+26,AIMC,Altra Industrial Motion Corp. Common Stock
+27,AKAM,Akamai Technologies Inc. Common Stock
+28,ALGM,Allegro MicroSystems Inc. Common Stock
+29,ALGN,Align Technology Inc. Common Stock
+30,ALGT,Allegiant Travel Company Common Stock
+31,ALKS,Alkermes plc Ordinary Shares
+32,ALNY,Alnylam Pharmaceuticals Inc. Common Stock
+33,ALRM,Alarm.com Holdings Inc. Common Stock
+34,ALTR,Altair Engineering Inc. Class A Common Stock
+35,AMAT,Applied Materials Inc. Common Stock
+36,AMBA,Ambarella Inc. Ordinary Shares
+37,AMD,Advanced Micro Devices Inc. Common Stock
+38,AMED,Amedisys Inc Common Stock
+39,AMEH,Apollo Medical Holdings Inc. Common Stock
+40,AMGN,Amgen Inc. Common Stock
+41,AMKR,Amkor Technology Inc. Common Stock
+42,AMPL,Amplitude Inc. Class A Common Stock
+43,AMZN,Amazon.com Inc. Common Stock
+44,ANAT,American National Group Inc. Common Stock
+45,ANGI,Angi Inc. Class A Common Stock
+46,ANSS,ANSYS Inc. Common Stock
+47,APA,APA Corporation Common Stock
+48,APLS,Apellis Pharmaceuticals Inc. Common Stock
+49,APP,Applovin Corporation Class A Common Stock
+50,APPF,AppFolio Inc. Class A Common Stock
+51,APPN,Appian Corporation Class A Common Stock
+52,APPS,Digital Turbine Inc. Common Stock
+53,ARCB,ArcBest Corporation Common Stock
+54,ARCC,Ares Capital Corporation Common Stock
+55,ARGX,argenx SE American Depositary Shares
+56,ARNA,Arena Pharmaceuticals Inc. Common Stock
+57,ARVL,Arrival Ordinary Shares
+58,ARVN,Arvinas Inc. Common Stock
+59,ARWR,Arrowhead Pharmaceuticals Inc. Common Stock
+60,ASML,ASML Holding N.V. New York Registry Shares
+61,ASND,Ascendis Pharma A/S American Depositary Shares
+62,ASO,Academy Sports and Outdoors Inc. Common Stock
+63,ATRC,AtriCure Inc. Common Stock
+64,ATVI,Activision Blizzard Inc. Common Stock
+65,AUB,Atlantic Union Bankshares Corporation Common Stock
+66,AUPH,Aurinia Pharmaceuticals Inc Ordinary Shares
+67,AUR,Aurora Innovation Inc. Class A Common Stock
+68,AVGO,Broadcom Inc. Common Stock
+69,AVT,Avnet Inc. Common Stock
+70,AXNX,Axonics Inc. Common Stock
+71,AXON,Axon Enterprise Inc. Common Stock
+72,AY,Atlantica Sustainable Infrastructure plc Ordinary Shares
+73,AZN,AstraZeneca PLC American Depositary Shares
+74,AZPN,Aspen Technology Inc. Common Stock
+75,AZTA,Azenta Inc.
+76,BANF,BancFirst Corporation Common Stock
+77,BANR,Banner Corporation Common Stock
+78,BCPC,Balchem Corporation Common Stock
+79,BCRX,BioCryst Pharmaceuticals Inc. Common Stock
+80,BEAM,Beam Therapeutics Inc. Common Stock
+81,BECN,Beacon Roofing Supply Inc. Common Stock
+82,BGNE,BeiGene Ltd. American Depositary Shares
+83,BHF,Brighthouse Financial Inc. Common Stock
+84,BIDU,Baidu Inc. ADS
+85,BIGC,BigCommerce Holdings Inc. Series 1 Common Stock
+86,BIIB,Biogen Inc. Common Stock
+87,BILI,Bilibili Inc. American Depositary Shares
+88,BKNG,Booking Holdings Inc. Common Stock
+89,BKR,Baker Hughes Company Class A Common Stock
+90,BL,BlackLine Inc. Common Stock
+91,BLDP,Ballard Power Systems Inc. Common Shares
+92,BLKB,Blackbaud Inc. Common Stock
+93,BMBL,Bumble Inc. Class A Common Stock
+94,BMRN,BioMarin Pharmaceutical Inc. Common Stock
+95,BNTX,BioNTech SE American Depositary Share
+96,BOKF,BOK Financial Corporation Common Stock
+97,BPMC,Blueprint Medicines Corporation Common Stock
+98,BPOP,Popular Inc. Common Stock
+99,BRKR,Bruker Corporation Common Stock
+100,BRZE,Braze Inc. Class A Common Stock
+101,BSY,Bentley Systems Incorporated Class B Common Stock
+102,BYND,Beyond Meat Inc. Common Stock
+103,BZ,KANZHUN LIMITED American Depository Shares
+104,CACC,Credit Acceptance Corporation Common Stock
+105,CAR,Avis Budget Group Inc. Common Stock
+106,CARG,CarGurus Inc. Class A Common Stock 
+107,CASY,Casey's General Stores Inc. Common Stock
+108,CATY,Cathay General Bancorp Common Stock
+109,CBRL,Cracker Barrel Old Country Store Inc Common Stock
+110,CBSH,Commerce Bancshares Inc. Common Stock
+111,CCEP,Coca-Cola Europacific Partners plc Ordinary Shares
+112,CCMP,CMC Materials Inc. Common Stock
+113,CCOI,Cogent Communications Holdings Inc.
+114,CDEV,Centennial Resource Development Inc. Class A Common Stock
+115,CDK,CDK Global Inc. Common Stock
+116,CDLX,Cardlytics Inc. Common Stock
+117,CDNA,CareDx Inc. Common Stock
+118,CDNS,Cadence Design Systems Inc. Common Stock
+119,CDW,CDW Corporation Common Stock
+120,CEGVV,Constellation Energy Corporation Common Stock When-Issued
+121,CELH,Celsius Holdings Inc. Common Stock
+122,CENT,Central Garden & Pet Company Common Stock
+123,CENTA,Central Garden & Pet Company Class A Common Stock Nonvoting
+124,CERE,Cerevel Therapeutics Holdings Inc. Common Stock
+125,CERN,Cerner Corporation Common Stock
+126,CERT,Certara Inc. Common Stock
+127,CFLT,Confluent Inc. Class A Common Stock
+128,CG,The Carlyle Group Inc. Common Stock
+129,CGC,Canopy Growth Corporation Common Shares
+130,CGNX,Cognex Corporation Common Stock
+131,CHDN,Churchill Downs Incorporated Common Stock
+132,CHK,Chesapeake Energy Corporation Common Stock
+133,CHKP,Check Point Software Technologies Ltd. Ordinary Shares
+134,CHNG,Change Healthcare Inc. Common Stock
+135,CHRW,C.H. Robinson Worldwide Inc. Common Stock
+136,CHTR,Charter Communications Inc. Class A Common Stock New
+137,CHX,ChampionX Corporation Common Stock 
+138,CIGI,Colliers International Group Inc. Subordinate Voting Shares
+139,CINF,Cincinnati Financial Corporation Common Stock
+140,CLBK,Columbia Financial Inc. Common Stock
+141,CMCSA,Comcast Corporation Class A Common Stock
+142,CME,CME Group Inc. Class A Common Stock
+143,CNXC,Concentrix Corporation Common Stock
+144,COHR,Coherent Inc. Common Stock
+145,COIN,Coinbase Global Inc. Class A Common Stock
+146,COKE,Coca-Cola Consolidated Inc. Common Stock
+147,COLB,Columbia Banking System Inc. Common Stock
+148,COLM,Columbia Sportswear Company Common Stock
+149,CONE,CyrusOne Inc Common Stock
+150,COOP,Mr. Cooper Group Inc. Common Stock
+151,CORT,Corcept Therapeutics Incorporated Common Stock
+152,CORZ,Core Scientific Inc. Common Stock
+153,COST,Costco Wholesale Corporation Common Stock
+154,COUP,Coupa Software Incorporated Common Stock
+155,CPRT,Copart Inc. (DE) Common Stock
+156,CRCT,Cricut Inc. Class A Common Stock
+157,CRNC,Cerence Inc. Common Stock
+158,CROX,Crocs Inc. Common Stock
+159,CRSP,CRISPR Therapeutics AG Common Shares
+160,CRUS,Cirrus Logic Inc. Common Stock
+161,CRVL,CorVel Corp. Common Stock
+162,CRWD,CrowdStrike Holdings Inc. Class A Common Stock
+163,CSCO,Cisco Systems Inc. Common Stock (DE)
+164,CSGP,CoStar Group Inc. Common Stock
+165,CSQ,Calamos Strategic Total Return Common Stock
+166,CSX,CSX Corporation Common Stock
+167,CTAS,Cintas Corporation Common Stock
+168,CTRE,CareTrust REIT Inc. Common Stock
+169,CTSH,Cognizant Technology Solutions Corporation Class A Common Stock
+170,CTXS,Citrix Systems Inc. Common Stock
+171,CVAC,CureVac N.V. Ordinary Shares
+172,CVBF,CVB Financial Corporation Common Stock
+173,CVCO,Cavco Industries Inc. Common Stock When Issued
+174,CVET,Covetrus Inc. Common Stock
+175,CVLT,Commvault Systems Inc. Common Stock
+176,CVT,Cvent Holding Corp. Common Stock
+177,CWST,Casella Waste Systems Inc. Class A Common Stock
+178,CYBR,CyberArk Software Ltd. Ordinary Shares
+179,CYTK,Cytokinetics Incorporated Common Stock
+180,CZR,Caesars Entertainment Inc. Common Stock
+181,DADA,Dada Nexus Limited American Depositary Shares
+182,DAVE,Dave Inc. Class A Common Stock
+183,DBX,Dropbox Inc. Class A Common Stock
+184,DCT,Duck Creek Technologies Inc. Common Stock
+185,DDOG,Datadog Inc. Class A Common Stock
+186,DH,Definitive Healthcare Corp. Class A Common Stock
+187,DIOD,Diodes Incorporated Common Stock
+188,DISCA,Discovery Inc. Series A Common Stock
+189,DISCB,Discovery Inc. Series B Common Stock
+190,DISCK,Discovery Inc. Series C Common Stock
+191,DISH,DISH Network Corporation Class A Common Stock
+192,DKNG,DraftKings Inc. Class A Common Stock
+193,DLO,DLocal Limited Class A Common Shares
+194,DLTR,Dollar Tree Inc. Common Stock
+195,DNLI,Denali Therapeutics Inc. Common Stock
+196,DNUT,Krispy Kreme Inc. Common Stock
+197,DOCU,DocuSign Inc. Common Stock
+198,DOOO,BRP Inc. (Recreational Products) Common Subordinate Voting Shares
+199,DORM,Dorman Products Inc. Common Stock
+200,DOX,Amdocs Limited Ordinary Shares
+201,DRVN,Driven Brands Holdings Inc. Common Stock
+202,DSEY,Diversey Holdings Ltd. Ordinary Shares
+203,DSGX,Descartes Systems Group Inc. (The) Common Stock
+204,DUOL,Duolingo Inc. Class A Common Stock
+205,DWAC,Digital World Acquisition Corp. Class A Common Stock
+206,DXCM,DexCom Inc. Common Stock
+207,EA,Electronic Arts Inc. Common Stock
+208,EBAY,eBay Inc. Common Stock
+209,EBC,Eastern Bankshares Inc. Common Stock
+210,EEFT,Euronet Worldwide Inc. Common Stock
+211,ENPH,Enphase Energy Inc. Common Stock
+212,ENSG,The Ensign Group Inc. Common Stock
+213,ENTG,Entegris Inc. Common Stock
+214,ENVX,Enovix Corporation Common Stock
+215,EPAY,Bottomline Technologies Inc. Common Stock
+216,EQIX,Equinix Inc. Common Stock REIT
+217,EQRX,EQRx Inc.  Common Stock
+218,ERIC,Ericsson American Depositary Shares
+219,ERIE,Erie Indemnity Company Class A Common Stock
+220,ESGR,Enstar Group Limited Ordinary Shares
+221,ESLT,Elbit Systems Ltd. Ordinary Shares
+222,ETSY,Etsy Inc. Common Stock
+223,EVCM,EverCommerce Inc. Common Stock
+224,EVO,Evotec SE American Depositary Shares
+225,EWBC,East West Bancorp Inc. Common Stock
+226,EXAS,Exact Sciences Corporation Common Stock
+227,EXC,Exelon Corporation Common Stock
+228,EXEL,Exelixis Inc. Common Stock
+229,EXFY,Expensify Inc. Class A Common Stock
+230,EXLS,ExlService Holdings Inc. Common Stock
+231,EXPD,Expeditors International of Washington Inc. Common Stock
+232,EXPE,Expedia Group Inc. Common Stock
+233,EXPI,eXp World Holdings Inc. Common Stock
+234,EXPO,Exponent Inc. Common Stock
+235,EYE,National Vision Holdings Inc. Common Stock
+236,FA,First Advantage Corporation Common Stock
+237,FANG,Diamondback Energy Inc. Commmon Stock
+238,FAST,Fastenal Company Common Stock
+239,FATE,Fate Therapeutics Inc. Common Stock
+240,FB,Meta Platforms Inc. Class A Common Stock
+241,FCFS,FirstCash Holdings Inc. Common Stock
+242,FCNCA,First Citizens BancShares Inc. Class A Common Stock
+243,FELE,Franklin Electric Co. Inc. Common Stock
+244,FFBC,First Financial Bancorp. Common Stock
+245,FFIN,First Financial Bankshares Inc. Common Stock
+246,FFIV,F5 Inc. Common Stock
+247,FHB,First Hawaiian Inc. Common Stock
+248,FIBK,First Interstate BancSystem Inc. Class A Common Stock
+249,FISV,Fiserv Inc. Common Stock
+250,FITB,Fifth Third Bancorp Common Stock
+251,FIVE,Five Below Inc. Common Stock
+252,FIVN,Five9 Inc. Common Stock
+253,FIZZ,National Beverage Corp. Common Stock
+254,FLEX,Flex Ltd. Ordinary Shares
+255,FLYW,Flywire Corporation Voting Common Stock
+256,FMBI,First Midwest Bancorp Inc. Common Stock
+257,FOCS,Focus Financial Partners Inc. Class A Common Stock
+258,FOLD,Amicus Therapeutics Inc. Common Stock
+259,FORM,FormFactor Inc. FormFactor Inc. Common Stock
+260,FOX,Fox Corporation Class B Common Stock
+261,FOXA,Fox Corporation Class A Common Stock
+262,FOXF,Fox Factory Holding Corp. Common Stock
+263,FRHC,Freedom Holding Corp. Common Stock
+264,FRME,First Merchants Corporation Common Stock
+265,FROG,JFrog Ltd. Ordinary Shares
+266,FRPT,Freshpet Inc. Common Stock
+267,FRSH,Freshworks Inc. Class A Common Stock
+268,FSLR,First Solar Inc. Common Stock
+269,FSV,FirstService Corporation Common Shares
+270,FTDR,Frontdoor Inc. Common Stock
+271,FTNT,Fortinet Inc. Common Stock
+272,FULT,Fulton Financial Corporation Common Stock
+273,FUTU,Futu Holdings Limited American Depositary Shares
+274,FWONA,Liberty Media Corporation Series A Liberty Formula One Common Stock
+275,FWONK,Liberty Media Corporation Series C Liberty Formula One Common Stock
+276,FWRD,Forward Air Corporation Common Stock
+277,FYBR,Frontier Communications Parent Inc. Common Stock
+278,GBDC,Golub Capital BDC Inc. Common Stock
+279,GDRX,GoodRx Holdings Inc. Class A Common Stock
+280,GDS,GDS Holdings Limited ADS
+281,GFS,GlobalFoundries Inc. Ordinary Shares
+282,GH,Guardant Health Inc. Common Stock
+283,GILD,Gilead Sciences Inc. Common Stock
+284,GLBE,Global-E Online Ltd. Ordinary Shares
+285,GLPG,Galapagos NV American Depositary Shares
+286,GLPI,Gaming and Leisure Properties Inc. Common Stock
+287,GMAB,Genmab A/S ADS
+288,GNTX,Gentex Corporation Common Stock
+289,GO,Grocery Outlet Holding Corp. Common Stock
+290,GOOG,Alphabet Inc. Class C Capital Stock
+291,GOOGL,Alphabet Inc. Class A Common Stock
+292,GRAB,Grab Holdings Limited Class A Ordinary Shares
+293,GRFS,Grifols S.A. American Depositary Shares
+294,GRUB,Just Eat Takeaway.com N.V. American Depositary Shares
+295,GSHD,Goosehead Insurance Inc. Class A Common Stock
+296,GT,The Goodyear Tire & Rubber Company Common Stock
+297,GTLB,GitLab Inc. Class A Common Stock
+298,HAIN,Hain Celestial Group Inc. (The) Common Stock
+299,HALO,Halozyme Therapeutics Inc. Common Stock
+300,HAS,Hasbro Inc. Common Stock
+301,HBAN,Huntington Bancshares Incorporated Common Stock
+302,HCM,HUTCHMED (China) Limited American Depositary Shares
+303,HCP,HashiCorp Inc. Class A Common Stock
+304,HELE,Helen of Troy Limited Common Stock
+305,HHR,HeadHunter Group PLC American Depositary Shares
+306,HLNE,Hamilton Lane Incorporated Class A Common Stock
+307,HMHC,Houghton Mifflin Harcourt Company Common Stock
+308,HOLX,Hologic Inc. Common Stock
+309,HON,Honeywell International Inc. Common Stock
+310,HOOD,Robinhood Markets Inc. Class A Common Stock
+311,HOPE,Hope Bancorp Inc. Common Stock
+312,HQY,HealthEquity Inc. Common Stock
+313,HSIC,Henry Schein Inc. Common Stock
+314,HST,Host Hotels & Resorts Inc. Common Stock
+315,HTHT,Huazhu Group Limited American Depositary Shares
+316,HTLF,Heartland Financial USA Inc. Common Stock
+317,HTZ,Hertz Global Holdings Inc Common Stock
+318,HUBG,Hub Group Inc. Class A Common Stock
+319,HWC,Hancock Whitney Corporation Common Stock
+320,HZNP,Horizon Therapeutics Public Limited Company Ordinary Shares
+321,IAC,IAC/InterActiveCorp Common Stock
+322,IART,Integra LifeSciences Holdings Corporation Common Stock
+323,IAS,Integral Ad Science Holding Corp. Common Stock
+324,IBKR,Interactive Brokers Group Inc. Class A Common Stock
+325,IBOC,International Bancshares Corporation Common Stock
+326,IBRX,ImmunityBio Inc. Common Stock
+327,IBTX,Independent Bank Group Inc Common Stock
+328,ICLR,ICON plc Ordinary Shares
+329,ICUI,ICU Medical Inc. Common Stock
+330,IDCC,InterDigital Inc. Common Stock
+331,IDXX,IDEXX Laboratories Inc. Common Stock
+332,IEP,Icahn Enterprises L.P. Common Stock
+333,IHRT,iHeartMedia Inc. Class A Common Stock
+334,IIVI,II-VI Incorporated Common Stock
+335,ILMN,Illumina Inc. Common Stock
+336,INCY,Incyte Corp. Common Stock
+337,INDB,Independent Bank Corp. Common Stock
+338,INMD,InMode Ltd. Ordinary Shares
+339,INSM,Insmed Inc. Common Stock
+340,INTC,Intel Corporation Common Stock
+341,INTU,Intuit Inc. Common Stock
+342,IONS,Ionis Pharmaceuticals Inc. Common Stock
+343,IOSP,Innospec Inc. Common Stock
+344,IOVA,Iovance Biotherapeutics Inc. Common Stock
+345,IPAR,Inter Parfums Inc. Common Stock
+346,IPGP,IPG Photonics Corporation Common Stock
+347,IQ,iQIYI Inc. American Depositary Shares
+348,IRDM,Iridium Communications Inc Common Stock
+349,IRTC,iRhythm Technologies Inc. Common Stock
+350,ISBC,Investors Bancorp Inc. Common Stock
+351,ISRG,Intuitive Surgical Inc. Common Stock
+352,ITCI,Intra-Cellular Therapies Inc. Common Stock
+353,ITRI,Itron Inc. Common Stock
+354,JAMF,Jamf Holding Corp. Common Stock
+355,JAZZ,Jazz Pharmaceuticals plc Common Stock (Ireland)
+356,JBHT,J.B. Hunt Transport Services Inc. Common Stock
+357,JBLU,JetBlue Airways Corporation Common Stock
+358,JD,JD.com Inc. American Depositary Shares
+359,JJSF,J & J Snack Foods Corp. Common Stock
+360,JKHY,Jack Henry & Associates Inc. Common Stock
+361,JOBS,51job Inc. American Depositary Shares
+362,KDP,Keurig Dr Pepper Inc. Common Stock
+363,KHC,The Kraft Heinz Company Common Stock
+364,KLAC,KLA Corporation Common Stock
+365,KLIC,Kulicke and Soffa Industries Inc. Common Stock
+366,KNBE,KnowBe4 Inc. Class A Common Stock
+367,KOD,Kodiak Sciences Inc Common Stock
+368,KRNT,Kornit Digital Ltd. Ordinary Shares
+369,KRTX,Karuna Therapeutics Inc. Common Stock
+370,KTOS,Kratos Defense & Security Solutions Inc. Common Stock
+371,LAMR,Lamar Advertising Company Class A Common Stock
+372,LANC,Lancaster Colony Corporation Common Stock
+373,LAUR,Laureate Education Inc. Common Stock
+374,LAZR,Luminar Technologies Inc.  Class A Common Stock
+375,LBRDA,Liberty Broadband Corporation Class A Common Stock
+376,LBRDK,Liberty Broadband Corporation Class C Common Stock
+377,LBTYA,Liberty Global plc Class A Ordinary Shares
+378,LBTYB,Liberty Global plc Class B Ordinary Shares
+379,LBTYK,Liberty Global plc Class C Ordinary Shares
+380,LCID,Lucid Group Inc. Common Stock
+381,LECO,Lincoln Electric Holdings Inc. Common Shares
+382,LEGN,Legend Biotech Corporation American Depositary Shares
+383,LESL,Leslie's Inc. Common Stock
+384,LFST,LifeStance Health Group Inc. Common Stock
+385,LFUS,Littelfuse Inc. Common Stock
+386,LGIH,LGI Homes Inc. Common Stock
+387,LHCG,LHC Group Common Stock
+388,LI,Li Auto Inc. American Depositary Shares
+389,LILA,Liberty Latin America Ltd. Class A Common Stock
+390,LILAK,Liberty Latin America Ltd. Class C Common Stock
+391,LITE,Lumentum Holdings Inc. Common Stock
+392,LIVN,LivaNova PLC Ordinary Shares
+393,LKFN,Lakeland Financial Corporation Common Stock
+394,LKQ,LKQ Corporation Common Stock
+395,LMDX,LumiraDx Limited Common Shares
+396,LNT,Alliant Energy Corporation Common Stock
+397,LOB,Live Oak Bancshares Inc. Common Stock
+398,LOGI,Logitech International S.A. Ordinary Shares
+399,LOPE,Grand Canyon Education Inc. Common Stock
+400,LPLA,LPL Financial Holdings Inc. Common Stock
+401,LPRO,Open Lending Corporation Class A Common Stock
+402,LRCX,Lam Research Corporation Common Stock
+403,LSCC,Lattice Semiconductor Corporation Common Stock
+404,LSTR,Landstar System Inc. Common Stock
+405,LSXMA,Liberty Media Corporation Series A Liberty SiriusXM Common Stock
+406,LSXMB,Liberty Media Corporation Series B Liberty SiriusXM Common Stock
+407,LSXMK,Liberty Media Corporation Series C Liberty SiriusXM Common Stock
+408,LULU,lululemon athletica inc. Common Stock
+409,LYFT,Lyft Inc. Class A Common Stock
+410,LZ,LegalZoom.com Inc. Common Stock
+411,MANH,Manhattan Associates Inc. Common Stock
+412,MANT,ManTech International Corporation Common Stock $0.01 Par Value
+413,MAR,Marriott International Class A Common Stock
+414,MARA,Marathon Digital Holdings Inc. Common Stock
+415,MASI,Masimo Corporation Common Stock
+416,MAT,Mattel Inc. Common Stock
+417,MCFE,McAfee Corp. Class A Common Stock
+418,MCHP,Microchip Technology Incorporated Common Stock
+419,MDB,MongoDB Inc. Class A Common Stock
+420,MDLZ,Mondelez International Inc. Class A Common Stock
+421,MDRX,Allscripts Healthcare Solutions Inc. Common Stock
+422,MEDP,Medpace Holdings Inc. Common Stock
+423,MELI,MercadoLibre Inc. Common Stock
+424,MEOH,Methanex Corporation Common Stock
+425,MGEE,MGE Energy Inc
+426,MIDD,Middleby Corporation (The) Common Stock
+427,MIME,Mimecast Limited Ordinary Shares
+428,MKSI,MKS Instruments Inc. Common Stock
+429,MKTX,MarketAxess Holdings Inc. Common Stock
+430,MLCO,Melco Resorts & Entertainment Limited American Depositary Shares
+431,MLKN,MillerKnoll Inc. Common Stock
+432,MMSI,Merit Medical Systems Inc. Common Stock
+433,MMYT,MakeMyTrip Limited Ordinary Shares
+434,MNDT,Mandiant Inc. Common Stock
+435,MNDY,monday.com Ltd. Ordinary Shares
+436,MNST,Monster Beverage Corporation
+437,MNTV,Momentive Global Inc. Common Stock
+438,MORN,Morningstar Inc. Common Stock
+439,MPWR,Monolithic Power Systems Inc. Common Stock
+440,MQ,Marqeta Inc. Class A Common Stock
+441,MRCY,Mercury Systems Inc Common Stock
+442,MRNA,Moderna Inc. Common Stock
+443,MRTX,Mirati Therapeutics Inc. Common Stock
+444,MRVI,Maravai LifeSciences Holdings Inc. Class A Common Stock
+445,MRVL,Marvell Technology Inc. Common Stock
+446,MSFT,Microsoft Corporation Common Stock
+447,MSTR,MicroStrategy Incorporated Common Stock Class A
+448,MTCH,Match Group Inc. Common Stock
+449,MTSI,MACOM Technology Solutions Holdings Inc. Common Stock
+450,MTTR,Matterport Inc. Class A Common Stock
+451,MU,Micron Technology Inc. Common Stock
+452,MXL,MaxLinear Inc. Common Stock
+453,MYGN,Myriad Genetics Inc. Common Stock
+454,NARI,Inari Medical Inc. Common Stock
+455,NATI,National Instruments Corporation Common Stock
+456,NAVI,Navient Corporation Common Stock
+457,NBIX,Neurocrine Biosciences Inc. Common Stock
+458,NCNO,nCino Inc. Common Stock
+459,NDAQ,Nasdaq Inc. Common Stock
+460,NDSN,Nordson Corporation Common Stock
+461,NEO,NeoGenomics Inc. Common Stock
+462,NEOG,Neogen Corporation Common Stock
+463,NFE,New Fortress Energy Inc. Class A Common Stock
+464,NFLX,Netflix Inc. Common Stock
+465,NICE,NICE Ltd American Depositary Shares
+466,NKLA,Nikola Corporation Common Stock
+467,NLOK,NortonLifeLock Inc. Common Stock
+468,NMIH,NMI Holdings Inc. Class A Common Stock
+469,NMRK,Newmark Group Inc. Class A Common Stock
+470,NOVT,Novanta Inc. Common Stock
+471,NSIT,Insight Enterprises Inc. Common Stock
+472,NTAP,NetApp Inc. Common Stock
+473,NTCT,NetScout Systems Inc. Common Stock
+474,NTES,NetEase Inc. American Depositary Shares
+475,NTLA,Intellia Therapeutics Inc. Common Stock
+476,NTNX,Nutanix Inc. Class A Common Stock
+477,NTRA,Natera Inc. Common Stock
+478,NTRS,Northern Trust Corporation Common Stock
+479,NUAN,Nuance Communications Inc. Common Stock
+480,NUVA,NuVasive Inc. Common Stock
+481,NVAX,Novavax Inc. Common Stock
+482,NVCR,NovoCure Limited Ordinary Shares
+483,NVDA,NVIDIA Corporation Common Stock
+484,NVEI,Nuvei Corporation Subordinate Voting Shares
+485,NVMI,Nova Ltd. Ordinary Shares
+486,NWE,NorthWestern Corporation Common Stock
+487,NWL,Newell Brands Inc. Common Stock
+488,NWS,News Corporation Class B Common Stock
+489,NWSA,News Corporation Class A Common Stock
+490,NXPI,NXP Semiconductors N.V. Common Stock
+491,NXST,Nexstar Media Group Inc. Class A Common Stock
+492,OAS,Oasis Petroleum Inc. Common Stock
+493,OCDX,Ortho Clinical Diagnostics Holdings plc Ordinary Shares
+494,ODFL,Old Dominion Freight Line Inc. Common Stock
+495,ODP,The ODP Corporation Common Stock
+496,OKTA,Okta Inc. Class A Common Stock
+497,OLED,Universal Display Corporation Common Stock
+498,OLLI,Ollie's Bargain Outlet Holdings Inc. Common Stock
+499,OLPX,Olaplex Holdings Inc. Common Stock
+500,OMAB,Grupo Aeroportuario del Centro Norte S.A.B. de C.V. ADS
+501,OMCL,Omnicell Inc. Common Stock ($0.001 par value)
+502,ON,ON Semiconductor Corporation Common Stock
+503,ONB,Old National Bancorp Common Stock
+504,OPCH,Option Care Health Inc. Common Stock
+505,OPEN,Opendoor Technologies Inc Common Stock
+506,OPK,OPKO Health Inc. Common Stock
+507,ORLY,O'Reilly Automotive Inc. Common Stock
+508,OTEX,Open Text Corporation Common Shares
+509,OTLY,Oatly Group AB American Depositary Shares
+510,OTTR,Otter Tail Corporation Common Stock
+511,OZK,Bank OZK Common Stock
+512,OZON,Ozon Holdings PLC American Depositary Shares each ADS representing one ordinary share
+513,PAA,Plains All American Pipeline L.P. Common Units representing Limited Partner Interests
+514,PAAS,Pan American Silver Corp. Common Stock
+515,PACB,Pacific Biosciences of California Inc. Common Stock
+516,PACW,PacWest Bancorp Common Stock
+517,PAGP,Plains GP Holdings L.P. Class A Units representing Limited Partner Interests
+518,PANW,Palo Alto Networks Inc. Common Stock
+519,PAX,Patria Investments Limited Class A Common Shares
+520,PAYX,Paychex Inc. Common Stock
+521,PBCT,People's United Financial Inc. Common Stock
+522,PCAR,PACCAR Inc. Common Stock
+523,PCH,PotlatchDeltic Corporation Common Stock
+524,PCRX,Pacira BioSciences Inc. Common Stock
+525,PCTY,Paylocity Holding Corporation Common Stock
+526,PDCE,PDC Energy Inc. Common Stock (Delaware)
+527,PDCO,Patterson Companies Inc. Common Stock
+528,PDD,Pinduoduo Inc. American Depositary Shares
+529,PECO,Phillips Edison & Company Inc. Common Stock
+530,PEGA,Pegasystems Inc. Common Stock
+531,PENN,Penn National Gaming Inc. Common Stock
+532,PEP,PepsiCo Inc. Common Stock
+533,PFG,Principal Financial Group Inc Common Stock
+534,PGNY,Progyny Inc. Common Stock
+535,PINC,Premier Inc. Class A Common Stock
+536,PLTK,Playtika Holding Corp. Common Stock
+537,PLUG,Plug Power Inc. Common Stock
+538,PLXS,Plexus Corp. Common Stock
+539,PNFP,Pinnacle Financial Partners Inc. Common Stock
+540,PODD,Insulet Corporation Common Stock
+541,POOL,Pool Corporation Common Stock
+542,POWI,Power Integrations Inc. Common Stock
+543,PPBI,Pacific Premier Bancorp Inc
+544,PPC,Pilgrim's Pride Corporation Common Stock
+545,PRFT,Perficient Inc. Common Stock
+546,PRGS,Progress Software Corporation Common Stock (DE)
+547,PRVA,Privia Health Group Inc. Common Stock
+548,PSEC,Prospect Capital Corporation Common Stock
+549,PSMT,PriceSmart Inc. Common Stock
+550,PTC,PTC Inc. Common Stock
+551,PTCT,PTC Therapeutics Inc. Common Stock
+552,PTEN,Patterson-UTI Energy Inc. Common Stock
+553,PTON,Peloton Interactive Inc. Class A Common Stock
+554,PYCR,Paycor HCM Inc. Common Stock
+555,PYPL,PayPal Holdings Inc. Common Stock
+556,PZZA,Papa John's International Inc. Common Stock
+557,QCOM,QUALCOMM Incorporated Common Stock
+558,QDEL,Quidel Corporation Common Stock
+559,QFIN,360 DigiTech Inc. American Depositary Shares
+560,QLYS,Qualys Inc. Common Stock
+561,QRTEA,Qurate Retail Inc. Series A Common Stock 
+562,QRTEB,Qurate Retail Inc. Series B Common Stock 
+563,QRVO,Qorvo Inc. Common Stock
+564,RARE,Ultragenyx Pharmaceutical Inc. Common Stock
+565,RCII,Rent-A-Center Inc. Common Stock
+566,RCM,R1 RCM Inc. Common Stock
+567,RDFN,Redfin Corporation Common Stock
+568,REG,Regency Centers Corporation Common Stock
+569,REGN,Regeneron Pharmaceuticals Inc. Common Stock
+570,REYN,Reynolds Consumer Products Inc. Common Stock
+571,RGEN,Repligen Corporation Common Stock
+572,RGLD,Royal Gold Inc. Common Stock
+573,RIVN,Rivian Automotive Inc. Class A Common Stock
+574,RKLB,Rocket Lab USA Inc. Common Stock
+575,RLAY,Relay Therapeutics Inc. Common Stock
+576,RMBS,Rambus Inc. Common Stock
+577,RNST,Renasant Corporation Common Stock
+578,RNW,ReNew Energy Global plc Class A Ordinary Shares
+579,ROIC,Retail Opportunity Investments Corp. Common Stock (MD)
+580,ROIV,Roivant Sciences Ltd. Common Shares
+581,ROKU,Roku Inc. Class A Common Stock
+582,ROLL,RBC Bearings Incorporated Common Stock
+583,ROST,Ross Stores Inc. Common Stock
+584,RPD,Rapid7 Inc. Common Stock
+585,RPRX,Royalty Pharma plc Class A Ordinary Shares 
+586,RRR,Red Rock Resorts Inc. Class A Common Stock
+587,RUN,Sunrun Inc. Common Stock
+588,RUSHA,Rush Enterprises Inc. Common Stock Cl A
+589,RUSHB,Rush Enterprises Inc. Class B
+590,RXT,Rackspace Technology Inc. Common Stock
+591,RYAAY,Ryanair Holdings plc American Depositary Shares
+592,SABR,Sabre Corporation Common Stock
+593,SAFM,Sanderson Farms Inc. Common Stock
+594,SAGE,Sage Therapeutics Inc. Common Stock
+595,SAIA,Saia Inc. Common Stock
+596,SANM,Sanmina Corporation Common Stock
+597,SASR,Sandy Spring Bancorp Inc. Common Stock
+598,SATS,EchoStar  Corporation Common Stock
+599,SBAC,SBA Communications Corporation Class A Common Stock
+600,SBCF,Seacoast Banking Corporation of Florida Common Stock
+601,SBGI,Sinclair Broadcast Group Inc. Class A Common Stock
+602,SBLK,Star Bulk Carriers Corp. Common Shares
+603,SBNY,Signature Bank Common Stock
+604,SBRA,Sabra Health Care REIT Inc. Common Stock
+605,SBUX,Starbucks Corporation Common Stock
+606,SEDG,SolarEdge Technologies Inc. Common Stock
+607,SEIC,SEI Investments Company Common Stock
+608,SFM,Sprouts Farmers Market Inc. Common Stock
+609,SFNC,Simmons First National Corporation Class A Common Stock
+610,SGEN,Seagen Inc. Common Stock
+611,SGMS,Scientific Games Corp Common Stock
+612,SGRY,Surgery Partners Inc. Common Stock
+613,SHC,Sotera Health Company Common Stock
+614,SHOO,Steven Madden Ltd. Common Stock
+615,SIGI,Selective Insurance Group Inc. Common Stock
+616,SIMO,Silicon Motion Technology Corporation American Depositary Shares
+617,SIRI,Sirius XM Holdings Inc. Common Stock
+618,SITM,SiTime Corporation Common Stock
+619,SIVB,SVB Financial Group Common Stock
+620,SLAB,Silicon Laboratories Inc. Common Stock
+621,SLGN,Silgan Holdings Inc. Common Stock
+622,SLM,SLM Corporation Common Stock
+623,SMCI,Super Micro Computer Inc. Common Stock
+624,SMPL,The Simply Good Foods Company Common Stock
+625,SMTC,Semtech Corporation Common Stock
+626,SNPS,Synopsys Inc. Common Stock
+627,SNY,Sanofi ADS
+628,SOFI,SoFi Technologies Inc. Common Stock  
+629,SONO,Sonos Inc. Common Stock
+630,SPLK,Splunk Inc. Common Stock
+631,SPSC,SPS Commerce Inc. Common Stock
+632,SPT,Sprout Social Inc Class A Common Stock
+633,SPWR,SunPower Corporation Common Stock
+634,SRAD,Sportradar Group AG Class A Ordinary Shares
+635,SRCL,Stericycle Inc. Common Stock
+636,SRPT,Sarepta Therapeutics Inc. Common Stock (DE)
+637,SSB,SouthState Corporation Common Stock
+638,SSNC,SS&C Technologies Holdings Inc. Common Stock
+639,SSRM,SSR Mining Inc. Common Stock
+640,STAA,STAAR Surgical Company Common Stock
+641,STFC,State Auto Financial Corporation Common Stock
+642,STLD,Steel Dynamics Inc.
+643,STNE,StoneCo Ltd. Class A Common Shares
+644,STX,Seagate Technology Holdings PLC Ordinary Shares (Ireland)
+645,SWAV,ShockWave Medical Inc. Common Stock
+646,SWKS,Skyworks Solutions Inc. Common Stock
+647,SWTX,SpringWorks Therapeutics Inc. Common Stock
+648,SYNA,Synaptics Incorporated Common Stock $0.001 Par Value
+649,SYNH,Syneos Health Inc. Class A Common Stock
+650,TASK,TaskUs Inc. Class A Common Stock
+651,TBK,Triumph Bancorp Inc. Common Stock
+652,TCBI,Texas Capital Bancshares Inc. Common Stock
+653,TCOM,Trip.com Group Limited American Depositary Shares
+654,TEAM,Atlassian Corporation Plc Class A Ordinary Shares
+655,TECH,Bio-Techne Corp Common Stock
+656,TENB,Tenable Holdings Inc. Common Stock
+657,TER,Teradyne Inc. Common Stock
+658,TFSL,TFS Financial Corporation Common Stock
+659,THRM,Gentherm Inc Common Stock
+660,TIGO,Millicom International Cellular S.A. Common Stock
+661,TLRY,Tilray Brands Inc. Class 2 Common Stock 
+662,TMUS,T-Mobile US Inc. Common Stock
+663,TNDM,Tandem Diabetes Care Inc. Common Stock
+664,TOWN,TowneBank Common Stock
+665,TPG,TPG Inc. Class A Common Stock
+666,TRIP,TripAdvisor Inc. Common Stock
+667,TRMB,Trimble Inc. Common Stock
+668,TROW,T. Rowe Price Group Inc. Common Stock
+669,TRUP,Trupanion Inc. Common Stock
+670,TSCO,Tractor Supply Company Common Stock
+671,TSEM,Tower Semiconductor Ltd. Ordinary Shares
+672,TSLA,Tesla Inc. Common Stock
+673,TSP,TuSimple Holdings Inc. Class A Common Stock
+674,TTD,The Trade Desk Inc. Class A Common Stock
+675,TTEC,TTEC Holdings Inc. Common Stock
+676,TTEK,Tetra Tech Inc. Common Stock
+677,TTGT,TechTarget Inc. Common Stock
+678,TTWO,Take-Two Interactive Software Inc. Common Stock
+679,TW,Tradeweb Markets Inc. Class A Common Stock
+680,TWKS,Thoughtworks Holding Inc. Common Stock
+681,TWNK,Hostess Brands Inc. Class A Common Stock
+682,TWST,Twist Bioscience Corporation Common Stock
+683,TXG,10x Genomics Inc. Class A Common Stock
+684,TXN,Texas Instruments Incorporated Common Stock
+685,TXRH,Texas Roadhouse Inc. Common Stock
+686,UAL,United Airlines Holdings Inc. Common Stock
+687,UBSI,United Bankshares Inc. Common Stock
+688,UCBI,United Community Banks Inc. Common Stock
+689,UCTT,Ultra Clean Holdings Inc. Common Stock
+690,UDMY,Udemy Inc. Common Stock
+691,UFPI,UFP Industries Inc. Common Stock
+692,UHAL,Amerco Common Stock
+693,ULCC,Frontier Group Holdings Inc. Common Stock
+694,ULTA,Ulta Beauty Inc. Common Stock
+695,UMBF,UMB Financial Corporation Common Stock
+696,UMPQ,Umpqua Holdings Corporation Common Stock
+697,UNIT,Uniti Group Inc. Common Stock
+698,UPST,Upstart Holdings Inc. Common stock
+699,UPWK,Upwork Inc. Common Stock
+700,URBN,Urban Outfitters Inc. Common Stock
+701,UTHR,United Therapeutics Corporation Common Stock
+702,VC,Visteon Corporation Common Stock
+703,VCSA,Vacasa Inc. Class A Common Stock
+704,VCTR,Victory Capital Holdings Inc. Class A Common Stock
+705,VEON,VEON Ltd. ADS
+706,VERX,Vertex Inc. Class A Common Stock
+707,VG,Vonage Holdings Corp. Common Stock
+708,VIAC,ViacomCBS Inc. Class B Common Stock
+709,VIACA,ViacomCBS Inc. Class A Common Stock
+710,VIAV,Viavi Solutions Inc. Common Stock
+711,VICR,Vicor Corporation Common Stock
+712,VIR,Vir Biotechnology Inc. Common Stock
+713,VIRT,Virtu Financial Inc. Class A Common Stock
+714,VLY,Valley National Bancorp Common Stock
+715,VMEO,Vimeo Inc. Common Stock
+716,VNOM,Viper Energy Partners LP Common Unit
+717,VOD,Vodafone Group Plc American Depositary Shares
+718,VORB,Virgin Orbit Holdings Inc. Common Stock
+719,VRNS,Varonis Systems Inc. Common Stock
+720,VRNT,Verint Systems Inc. Common Stock
+721,VRRM,Verra Mobility Corporation Class A Common Stock
+722,VRSK,Verisk Analytics Inc. Common Stock
+723,VRSN,VeriSign Inc. Common Stock
+724,VRTX,Vertex Pharmaceuticals Incorporated Common Stock
+725,VSAT,ViaSat Inc. Common Stock
+726,VTRS,Viatris Inc. Common Stock
+727,WAFD,Washington Federal Inc. Common Stock
+728,WB,Weibo Corporation American Depositary Share
+729,WBA,Walgreens Boots Alliance Inc. Common Stock
+730,WDAY,Workday Inc. Class A Common Stock
+731,WDC,Western Digital Corporation Common Stock
+732,WDFC,WD-40 Company Common Stock
+733,WEN,Wendy's Company (The) Common Stock
+734,WERN,Werner Enterprises Inc. Common Stock
+735,WFRD,Weatherford International plc Ordinary Shares
+736,WING,Wingstop Inc. Common Stock
+737,WIRE,Encore Wire Corporation Common Stock
+738,WIX,Wix.com Ltd. Ordinary Shares
+739,WMG,Warner Music Group Corp. Class A Common Stock
+740,WOOF,Petco Health and Wellness Company Inc. Class A Common Stock
+741,WSBC,WesBanco Inc. Common Stock
+742,WSC,WillScot Mobile Mini Holdings Corp. Class A Common Stock
+743,WSFS,WSFS Financial Corporation Common Stock
+744,WTFC,Wintrust Financial Corporation Common Stock
+745,WTW,Willis Towers Watson Public Limited Company Ordinary Shares
+746,WWD,Woodward Inc. Common Stock
+747,WYNN,Wynn Resorts Limited Common stock
+748,XEL,Xcel Energy Inc. Common Stock
+749,XLNX,Xilinx Inc. Common Stock
+750,XM,Qualtrics International Inc. Class A Common Stock
+751,XMTR,Xometry Inc. Class A Common Stock
+752,XP,XP Inc. Class A Common Stock
+753,XRAY,DENTSPLY SIRONA Inc. Common Stock
+754,XRX,Xerox Holdings Corporation Common Stock
+755,YNDX,Yandex N.V. Class A Ordinary Shares
+756,YY,JOYY Inc. American Depositary Shares
+757,Z,Zillow Group Inc. Class C Capital Stock
+758,ZBRA,Zebra Technologies Corporation Class A Common Stock
+759,ZD,Ziff Davis Inc. Common Stock
+760,ZG,Zillow Group Inc. Class A Common Stock
+761,ZI,ZoomInfo Technologies Inc Class A Common Stock
+762,ZION,Zions Bancorporation N.A. Common Stock
+763,ZLAB,Zai Lab Limited American Depositary Shares
+764,ZM,Zoom Video Communications Inc. Class A Common Stock
+765,ZNGA,Zynga Inc. Class A Common Stock
+766,ZNTL,Zentalis Pharmaceuticals Inc. Common Stock
+767,ZS,Zscaler Inc. Common Stock
