@@ -48,9 +48,10 @@ def fetch():
     stonks = Stonks.query.all()
     results = [
         {
+            "id": stonk.id,
             "ticker": stonk.ticker,
             "stonk": stonk.stonk
-        } for stonk in stonks if stonk is not None]
+        } for stonk in stonks]
     json_dumps = json.dumps(results)
     resp = Response(json_dumps, status=200, mimetype='application/json')
     return resp

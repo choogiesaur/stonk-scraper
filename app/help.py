@@ -11,7 +11,7 @@ import pandas as pd
 
 with open('nasdaq_screener_3.csv') as g:
     list1 = []
-    counter = 1
+    counter = 11
     for line in g:
         print(str(counter) + ',' + line.split(',')[0] + ',' + line.split(',')[1])
         counter += 1
