@@ -140,6 +140,9 @@ for tweet in publicTweets:
     print(tweet.text)
     tokenMatching(tweet.text, pattern)
 
+# response_API = requests.get('http://0.0.0.0:5000/fetch-stonks')
+# print(response_API)
+
 # @app.context_processor
 # def utility_processor():
 #     def tweets():
@@ -160,4 +163,8 @@ for tweet in publicTweets:
 #         return dict(tweets=tweets)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=True)
+    app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=True)
+
+response_API = requests.get('http://0.0.0.0:5000/fetch-stonks')
+data = response_API.text
+print(data)

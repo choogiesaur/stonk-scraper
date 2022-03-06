@@ -1,6 +1,6 @@
 FROM python:3.7.6
 
-EXPOSE 5000
+EXPOSE 8080
 
 ADD . /app
 WORKDIR /app
@@ -9,7 +9,6 @@ COPY requirements.txt /app
 COPY ./lib /app
 ENV variables.env /stonk-scraper
 RUN pip install -r requirements.txt --upgrade pip
-# RUN brew services start postgresql
 
 COPY . /app
 
