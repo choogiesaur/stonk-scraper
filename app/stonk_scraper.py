@@ -22,7 +22,6 @@ app.add_url_rule('/live', view_func=routes.live)
 app.add_url_rule('/demo', view_func=routes.demo)
 app.add_url_rule('/info', view_func=routes.info)
 app.add_url_rule('/fetch-stonks', view_func=routes.fetch)
-# app.add_url_rule('/display-tweets', view_func=)
 
 def getApi():
     # Get environment variables for Twitter API
@@ -140,9 +139,6 @@ for tweet in publicTweets:
     print(tweet.text)
     tokenMatching(tweet.text, pattern)
 
-# response_API = requests.get('http://0.0.0.0:5000/fetch-stonks')
-# print(response_API)
-
 # @app.context_processor
 # def utility_processor():
 #     def tweets():
@@ -153,8 +149,6 @@ for tweet in publicTweets:
 #             result += tweet.text, test
 #             return result
 #     return dict(tweets=tweets)
-
-
 
 # def tweets():
 #     for tweet in publicTweets:
