@@ -44,7 +44,6 @@ def analyzeSentiment():
     
     # Pass in text to analyze from stonks
     for tweet in publicTweets:
-        print(tweet.text)
         document = language_v1.Document(content=tweet.text, type_=language_v1.Document.Type.PLAIN_TEXT)
         
         # Detect tweet sentiment
@@ -57,8 +56,6 @@ stonks = ''
 with open('stonks.txt') as f:
     for line in f:
         stonks += line    
-    print(stonks)
-
 
 analyzeSentiment()
 
@@ -91,6 +88,8 @@ def createPattern(stonkList):
         company = []
         if ' ' in item:
             company = item.split(' ')
+        else:
+            company.append(item)
 
         # Generate pattern for companies with space
         temp = []
