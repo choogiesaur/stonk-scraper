@@ -1,19 +1,14 @@
 import os
 import tweepy
 import requests
-import json as simplejason
-import simplejson as json
+import routes
 from re import template
-import google
 from google.cloud import language_v1
 import spacy
-from spacy import displacy
-from collections import Counter
 from spacy.matcher import Matcher
 from flask import Flask
 from flask import current_app as app
 from google.oauth2 import service_account
-import routes
 
 app.config.from_pyfile('config.py')
 
@@ -91,42 +86,30 @@ def createPattern(stonkList):
     for item in stonkList:
 
         patternDict = {}
-        # Generate pattern for companies with space
+        
+        # Generic-ified:
+        company = []
         if ' ' in item:
-            splitList = item.split(' ')
-            temp = []
-            for item in splitList:
-                # Create dictionary list where each word in the company name is a value in its own dictionary
-                # Copied so multiple dictionaries with the same key "lower" can be created
-                patternDict["LOWER"] = item.lower()
-                dict_copy = patternDict.copy()
-                temp.append(dict_copy)
-                if item == splitList[-1]:
-                    pattern.append(temp)
-
-                # Create pattern for company name in the form of a twitter handle
-                patternDict["LOWER"] = '@' + item.lower()
-                dict_copy_handle = patternDict.copy()
-                tempHandle = []
-                tempHandle.append(dict_copy_handle)
-                pattern.append(tempHandle)
-                tempHandle = []
+            company = item.split(' ')
 
         # Generate pattern for companies with space
-        else:
-            # Create pattern for single word company; copied so multiple dictionaries with same key can be created
+        temp = []
+        for item in company:
+            # Create dictionary list where each word in the company name is a value in its own dictionary
+            # Copied so multiple dictionaries with the same key "lower" can be created
             patternDict["LOWER"] = item.lower()
             dict_copy = patternDict.copy()
-            temp = []
             temp.append(dict_copy)
-            pattern.append(temp)
+            if item == company[-1]:
+                pattern.append(temp)
 
-            # Create pattern for single word company as Twitter handle
+            # Create pattern for company name in the form of a twitter handle
             patternDict["LOWER"] = '@' + item.lower()
             dict_copy_handle = patternDict.copy()
-            temp = []
-            temp.append(dict_copy_handle)
-            pattern.append(temp)
+            tempHandle = []
+            tempHandle.append(dict_copy_handle)
+            pattern.append(tempHandle)
+            tempHandle = []
 
 createPattern(stonkList)
 
