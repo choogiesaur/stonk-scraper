@@ -1,9 +1,9 @@
 import os
-from re import template
 import tweepy
 import requests
 import json as simplejason
 import simplejson as json
+from re import template
 import google
 from google.cloud import language_v1
 import spacy
@@ -23,8 +23,8 @@ app.add_url_rule('/demo', view_func=routes.demo)
 app.add_url_rule('/info', view_func=routes.info)
 app.add_url_rule('/fetch-stonks', view_func=routes.fetch)
 
+# Make connection to Twitter API
 def getApi():
-    # Get environment variables for Twitter API
     consumer_key 	= os.getenv('TWITTER_API_KEY')
     consumer_secret = os.getenv('TWITTER_API_KEY_SECRET')
     access_token    = os.getenv('TWITTER_ACCESS_TOKEN')
@@ -37,28 +37,33 @@ def getApi():
 
 api = getApi()
 
-# Gather tweets from Elon Musk's timeline; to be made generic in the future
+# Gather tweets from Elon Musk's timeline
 user = '@elonmusk'
 publicTweets = api.user_timeline(screen_name = user)
+
+def analyzeSentiment():
+
+    # Instantiate client
+    credentials = service_account.Credentials.from_service_account_file('stonk_google_creds.json')
+    client = language_v1.LanguageServiceClient(credentials=credentials)
+    
+    # Pass in text to analyze from stonks
+    for tweet in publicTweets:
+        print(tweet.text)
+        document = language_v1.Document(content=tweet.text, type_=language_v1.Document.Type.PLAIN_TEXT)
+        
+        # Detect tweet sentiment
+        sentiment = client.analyze_sentiment(request={'document': document}).document_sentiment
+        print("Text: {}".format(tweet.text))
+        print("Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude))
 
 # Create list of stonks from stonks.txt
 stonks = ''
 with open('stonks.txt') as f:
     for line in f:
         stonks += line    
+    print(stonks)
 
-def analyzeSentiment():
-    # Instantiate client
-    credentials = service_account.Credentials.from_service_account_file('stonk_google_creds.json')
-    client = language_v1.LanguageServiceClient(credentials=credentials)
-    # Pass in text to analyze from stonks
-    for tweet in publicTweets:
-        print(tweet.text)
-        document = language_v1.Document(content=tweet.text, type_=language_v1.Document.Type.PLAIN_TEXT)
-        # Detect tweet sentiment
-        sentiment = client.analyze_sentiment(request={'document': document}).document_sentiment
-        print("Text: {}".format(tweet.text))
-        print("Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude))
 
 analyzeSentiment()
 
@@ -79,12 +84,14 @@ createStonkList()
 # Empty array to add patterns that will be used for token matching with spaCy library
 pattern = []
 
+# Structure data in pattern recognizable by spaCy for named entity recognition
 def createPattern(stonkList):
+
     # Create a pattern dictionary for each symbol or stock name
     for item in stonkList:
-        # Empty dictionary for pattern creation
+
         patternDict = {}
-        # Check to see if there is a space in the company name
+        # Generate pattern for companies with space
         if ' ' in item:
             splitList = item.split(' ')
             temp = []
@@ -96,6 +103,7 @@ def createPattern(stonkList):
                 temp.append(dict_copy)
                 if item == splitList[-1]:
                     pattern.append(temp)
+
                 # Create pattern for company name in the form of a twitter handle
                 patternDict["LOWER"] = '@' + item.lower()
                 dict_copy_handle = patternDict.copy()
@@ -103,7 +111,8 @@ def createPattern(stonkList):
                 tempHandle.append(dict_copy_handle)
                 pattern.append(tempHandle)
                 tempHandle = []
-        # Pattern for all companies without space in name
+
+        # Generate pattern for companies with space
         else:
             # Create pattern for single word company; copied so multiple dictionaries with same key can be created
             patternDict["LOWER"] = item.lower()
@@ -111,6 +120,7 @@ def createPattern(stonkList):
             temp = []
             temp.append(dict_copy)
             pattern.append(temp)
+
             # Create pattern for single word company as Twitter handle
             patternDict["LOWER"] = '@' + item.lower()
             dict_copy_handle = patternDict.copy()
@@ -138,23 +148,6 @@ def tokenMatching(tweet, pattern):
 for tweet in publicTweets:
     print(tweet.text)
     tokenMatching(tweet.text, pattern)
-
-# @app.context_processor
-# def utility_processor():
-#     def tweets():
-#         result = ''
-#         for tweet in publicTweets:
-#             print(tweet.text)
-#             test = tokenMatching(tweet.text, pattern)
-#             result += tweet.text, test
-#             return result
-#     return dict(tweets=tweets)
-
-# def tweets():
-#     for tweet in publicTweets:
-#         print(tweet.text)
-#         tokenMatching(tweet.text, pattern)
-#         return dict(tweets=tweets)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=True)
