@@ -10,16 +10,9 @@ from flask import Flask
 from flask import current_app as app
 from google.oauth2 import service_account
 
-app.config.from_pyfile('config.py')
-
-app.add_url_rule('/', view_func=routes.home)
-app.add_url_rule('/live', view_func=routes.live)
-app.add_url_rule('/demo', view_func=routes.demo)
-app.add_url_rule('/info', view_func=routes.info)
-app.add_url_rule('/fetch-stonks', view_func=routes.fetch)
-
 # Make connection to Twitter API
-def getApi():
+def get_api():
+    
     consumer_key 	= os.getenv('TWITTER_API_KEY')
     consumer_secret = os.getenv('TWITTER_API_KEY_SECRET')
     access_token    = os.getenv('TWITTER_ACCESS_TOKEN')
@@ -30,14 +23,9 @@ def getApi():
     api = tweepy.API(auth)
     return api
 
-api = getApi()
-
-# Gather tweets from Elon Musk's timeline
-user = '@elonmusk'
-publicTweets = api.user_timeline(screen_name = user)
-
-def analyzeSentiment():
-
+# Analyze sentiment of tweet using Google natural language library
+def analyze_sentiment():
+    
     # Instantiate client
     credentials = service_account.Credentials.from_service_account_file('stonk_google_creds.json')
     client = language_v1.LanguageServiceClient(credentials=credentials)
@@ -51,18 +39,8 @@ def analyzeSentiment():
         print("Text: {}".format(tweet.text))
         print("Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude))
 
-# Create list of stonks from stonks.txt
-stonks = ''
-with open('stonks.txt') as f:
-    for line in f:
-        stonks += line    
-
-analyzeSentiment()
-
-# Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
-stonkList = []
-
-def createStonkList():
+def create_stonk_list():
+    
     # Create a list of strings where each string is an individual stonk
     temp = ''
     for stonk in stonks:
@@ -71,13 +49,8 @@ def createStonkList():
             stonkList.append(temp.strip('\n'))
             temp = ''
 
-createStonkList()
-
-# Empty array to add patterns that will be used for token matching with spaCy library
-pattern = []
-
 # Structure data in pattern recognizable by spaCy for named entity recognition
-def createPattern(stonkList):
+def create_pattern(stonkList):
 
     # Create a pattern dictionary for each symbol or stock name
     for item in stonkList:
@@ -110,10 +83,9 @@ def createPattern(stonkList):
             pattern.append(tempHandle)
             tempHandle = []
 
-createPattern(stonkList)
-
 # Main token matching function using spacy for ticker symbols and company names
 def tokenMatching(tweet, pattern):
+    
     nlp = spacy.load("en_core_web_sm")
     matcher = Matcher(nlp.vocab)
     matcher.add("Match_By_Token", pattern)
@@ -126,14 +98,42 @@ def tokenMatching(tweet, pattern):
     if matchedTokens:
         print(matchedTokens)
 
-# Matching for tweets
-for tweet in publicTweets:
-    print(tweet.text)
-    tokenMatching(tweet.text, pattern)
-
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=True)
+    app.config.from_pyfile('config.py')
 
-response_API = requests.get('http://0.0.0.0:5000/fetch-stonks')
-data = response_API.text
-print(data)
+    app.add_url_rule('/', view_func=routes.home)
+    app.add_url_rule('/live', view_func=routes.live)
+    app.add_url_rule('/demo', view_func=routes.demo)
+    app.add_url_rule('/info', view_func=routes.info)
+    app.add_url_rule('/fetch-stonks', view_func=routes.fetch)
+    
+    api = get_api()
+
+    # Gather tweets from Elon Musk's timeline
+    user = '@elonmusk'
+    publicTweets = api.user_timeline(screen_name = user)
+
+    # Create list of stonks from stonks.txt
+    stonks = ''
+    with open('stonks.txt') as f:
+        for line in f:
+            stonks += line   
+
+    analyze_sentiment()
+
+    # Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
+    stonkList = []
+
+    create_stonk_list()
+
+    # Empty array to add patterns that will be used for token matching with spaCy library
+    pattern = []
+
+    create_pattern(stonkList)
+
+    # Matching for tweets
+    for tweet in publicTweets:
+        print(tweet.text)
+        tokenMatching(tweet.text, pattern)
+
+    app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=True)
