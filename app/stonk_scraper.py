@@ -84,7 +84,7 @@ def create_pattern(stonkList):
             tempHandle = []
 
 # Main token matching function using spacy for ticker symbols and company names
-def tokenMatching(tweet, pattern):
+def token_matching(tweet, pattern):
     
     nlp = spacy.load("en_core_web_sm")
     matcher = Matcher(nlp.vocab)
@@ -99,14 +99,17 @@ def tokenMatching(tweet, pattern):
         print(matchedTokens)
 
 if __name__ == "__main__":
+    # Add configuration for app from config file
     app.config.from_pyfile('config.py')
 
+    # Configure routes for app
     app.add_url_rule('/', view_func=routes.home)
     app.add_url_rule('/live', view_func=routes.live)
     app.add_url_rule('/demo', view_func=routes.demo)
     app.add_url_rule('/info', view_func=routes.info)
     app.add_url_rule('/fetch-stonks', view_func=routes.fetch)
     
+    # Create API object
     api = get_api()
 
     # Gather tweets from Elon Musk's timeline
@@ -119,21 +122,25 @@ if __name__ == "__main__":
         for line in f:
             stonks += line   
 
+    # Call analyze sentiment function to get score and magnitude of tweets
     analyze_sentiment()
 
     # Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
     stonkList = []
 
+    # Create list of strings of stonk names and ticker symbols
     create_stonk_list()
 
     # Empty array to add patterns that will be used for token matching with spaCy library
     pattern = []
 
+    # Store data in structure for spaCy
     create_pattern(stonkList)
 
     # Matching for tweets
     for tweet in publicTweets:
         print(tweet.text)
-        tokenMatching(tweet.text, pattern)
+        token_matching(tweet.text, pattern)
 
+    # Run application with specified port and IP address
     app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=True)
