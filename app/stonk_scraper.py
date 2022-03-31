@@ -31,13 +31,16 @@ def analyze_sentiment():
     client = language_v1.LanguageServiceClient(credentials=credentials)
     
     # Pass in text to analyze from stonks
+    result = []
     for tweet in publicTweets:
         document = language_v1.Document(content=tweet.text, type_=language_v1.Document.Type.PLAIN_TEXT)
         
         # Detect tweet sentiment
         sentiment = client.analyze_sentiment(request={'document': document}).document_sentiment
-        print("Text: {}".format(tweet.text))
-        print("Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude))
+        sentiment_formatted= "Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude)
+        text = "Text: {}".format(tweet.text) 
+        result.append((text, sentiment_formatted))
+    return result
 
 def create_stonk_list():
     
@@ -108,6 +111,7 @@ if __name__ == "__main__":
     app.add_url_rule('/demo', view_func=routes.demo)
     app.add_url_rule('/info', view_func=routes.info)
     app.add_url_rule('/fetch-stonks', view_func=routes.fetch)
+    app.add_url_rule('/add-stonks', view_func=routes.add)
     
     # Create API object
     api = get_api()
@@ -123,7 +127,7 @@ if __name__ == "__main__":
             stonks += line   
 
     # Call analyze sentiment function to get score and magnitude of tweets
-    analyze_sentiment()
+    output = analyze_sentiment()
 
     # Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
     stonkList = []
