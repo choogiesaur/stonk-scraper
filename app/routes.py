@@ -3,8 +3,10 @@ from flask import current_app as app
 from models import Stonks, db
 import json
 from __init__ import create_app
+from stonk_scraper import StonkScraper as stk
 
 app = create_app()
+stonk_obj = stk()
 
 @app.route('/')
 def home():
@@ -21,9 +23,9 @@ def live():
     return render_template(
         'live.html',
         title="Stonk Scraper",
-        description="Live scraper for Elon's twitter feed. Click the buttons below for named entity recognition and sentiment analysis on live tweets."
+        description="Live scraper for Elon's twitter feed. Click the buttons below for named entity recognition and sentiment analysis on live tweets.",
+        sentiment=stonk_obj.analyze_sentiment()
     )
-
 
 @app.route('/demo', methods=['GET', 'POST', 'PUT'])
 def demo():
