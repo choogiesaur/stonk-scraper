@@ -12,10 +12,9 @@ from google.oauth2 import service_account
 
 class StonkScraper:
     def __init__(self, user='@elonmusk'):
-        self.public_tweets = None
         self.api_conn = self.get_api()
-        self.sentiment = None
         self.user = user
+        self.public_tweets = self.api_conn.user_timeline(screen_name = self.user)
 
     # Make connection to Twitter API
     def get_api(self):
@@ -35,7 +34,7 @@ class StonkScraper:
         self.public_tweets = self.api_conn.user_timeline(screen_name = self.user)
     
     # Analyze sentiment of tweet using Google natural language library
-    def analyze_sentiment(self):
+    def analyze_sentiment(self, tweets):
         
         # Instantiate client
         credentials = service_account.Credentials.from_service_account_file('stonk_google_creds.json')
@@ -43,7 +42,7 @@ class StonkScraper:
         
         # Pass in text to analyze from stonks
         result = []
-        for tweet in self.public_tweets:
+        for tweet in tweets:
             document = language_v1.Document(content=tweet.text, type_=language_v1.Document.Type.PLAIN_TEXT)
             
             # Detect tweet sentiment
@@ -116,6 +115,9 @@ if __name__ == "__main__":
     # Add configuration for app from config file
     app.config.from_pyfile('config.py')
 
+    # Create instance of StonkScraper class
+    stk = StonkScraper('@elonmusk')
+
     # Configure routes for app
     app.add_url_rule('/', view_func=routes.home)
     app.add_url_rule('/live', view_func=routes.live)
@@ -124,20 +126,11 @@ if __name__ == "__main__":
     app.add_url_rule('/fetch-stonks', view_func=routes.fetch)
     app.add_url_rule('/add-stonks', view_func=routes.add)
 
-    # Create instance of StonkScraper class
-    stk = StonkScraper('@elonmusk')
-
-    # Gather tweets from Elon Musk's timeline
-    stk.refresh_tweets()
-
     # Create list of stonks from stonks.txt
     stonks = ''
     with open('stonks.txt') as f:
         for line in f:
             stonks += line   
-
-    # Call analyze sentiment function to get score and magnitude of tweets
-    # output = analyze_sentiment()
 
     # Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
     stonkList = []
