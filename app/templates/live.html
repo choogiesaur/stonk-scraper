@@ -8,10 +8,16 @@
     <div class="container">
         <h1>{{title}}</h1>
         <p>{{description}}</p>
-        <p>it worked</p>
     </div>
-    <button>Click for tweet test</button>
-    <button>Click for sentiment analysis</button>
+    <table>
+      {% for item in sentiment %}
+      <tr>
+         <td>{{item.text}}</td>
+         <td>{{item.sentiment}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <span>
+      {{ner}}
+    </span>
 {% endblock %}
-
-<!-- {% block script %} -->
