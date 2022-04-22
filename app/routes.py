@@ -24,8 +24,8 @@ def live():
         'live.html',
         title="Stonk Scraper",
         description="Live scraper for Elon's twitter feed. Click the buttons below for named entity recognition and sentiment analysis on live tweets.",
-        # Return sentiment - list of tuples
-        sentiment=stonk_obj.analyze_sentiment(stonk_obj.public_tweets)
+        sentiment=stonk_obj.analyze_sentiment(stonk_obj.public_tweets),
+        ner=stonk_obj.token_matching(stonk_obj.public_tweets, stonk_obj.pattern)
     )
 
 @app.route('/demo', methods=['GET', 'POST', 'PUT'])
