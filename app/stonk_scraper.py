@@ -15,6 +15,8 @@ class StonkScraper:
         self.api_conn = self.get_api()
         self.user = user
         self.public_tweets = self.api_conn.user_timeline(screen_name = self.user)
+        self.stonk_list = self.create_stonk_list()
+        self.pattern = self.create_pattern(self.stonk_list)
 
     # Make connection to Twitter API
     def get_api(self):
@@ -49,11 +51,21 @@ class StonkScraper:
             sentiment = client.analyze_sentiment(request={'document': document}).document_sentiment
             sentiment_formatted= "Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude)
             text = "Text: {}".format(tweet.text) 
-            result.append((text, sentiment_formatted))
+            result_dict = dict(text=text, sentiment=sentiment_formatted)
+            result.append(result_dict)
         return result
 
     def create_stonk_list(self):
         
+        # Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
+        stonkList = []
+        
+        # Create list of stonks from stonks.txt
+        stonks = ''
+        with open('stonks.txt') as f:
+            for line in f:
+                stonks += line 
+
         # Create a list of strings where each string is an individual stonk
         temp = ''
         for stonk in stonks:
@@ -61,10 +73,15 @@ class StonkScraper:
             if stonk == '\n':
                 stonkList.append(temp.strip('\n'))
                 temp = ''
+        
+        return stonkList
 
     # Structure data in pattern recognizable by spaCy for named entity recognition
     def create_pattern(self, stonkList):
 
+        # Empty array to add patterns that will be used for token matching with spaCy library
+        pattern = []
+        
         # Create a pattern dictionary for each symbol or stock name
         for item in stonkList:
 
@@ -95,21 +112,28 @@ class StonkScraper:
                 tempHandle.append(dict_copy_handle)
                 pattern.append(tempHandle)
                 tempHandle = []
+        return pattern
 
     # Main token matching function using spacy for ticker symbols and company names
-    def token_matching(self, tweet, pattern):
+    def token_matching(self, tweets, pattern):
         
-        nlp = spacy.load("en_core_web_sm")
-        matcher = Matcher(nlp.vocab)
-        matcher.add("Match_By_Token", pattern)
-        doc = nlp(tweet)
-        matches = matcher(doc)
-        matchedTokens = []
-        for match_id, start, end in matches:
-            span = doc[start:end]
-            matchedTokens.append(span.text)
-        if matchedTokens:
-            print(matchedTokens)
+        # Result array for appending dictionaries with tweets and matched tokens
+        result = []
+        
+        for tweet in tweets:
+            nlp = spacy.load("en_core_web_sm")
+            matcher = Matcher(nlp.vocab)
+            matcher.add("Match_By_Token", pattern)
+            doc = nlp(tweet.text)
+            matches = matcher(doc)
+            matchedTokens = []
+            for match_id, start, end in matches:
+                span = doc[start:end]
+                matchedTokens.append(span.text)
+            if matchedTokens:
+                result_dict = dict(tweet=tweet.text, tokens=matchedTokens)
+                result.append(result_dict)
+        return result
 
 if __name__ == "__main__":
     # Add configuration for app from config file
@@ -125,29 +149,6 @@ if __name__ == "__main__":
     app.add_url_rule('/info', view_func=routes.info)
     app.add_url_rule('/fetch-stonks', view_func=routes.fetch)
     app.add_url_rule('/add-stonks', view_func=routes.add)
-
-    # Create list of stonks from stonks.txt
-    stonks = ''
-    with open('stonks.txt') as f:
-        for line in f:
-            stonks += line   
-
-    # Empty array that will be used for creating the dictionary pattern of 'LOWER' as the key and company name as the value
-    stonkList = []
-
-    # Create list of strings of stonk names and ticker symbols
-    stk.create_stonk_list()
-
-    # Empty array to add patterns that will be used for token matching with spaCy library
-    pattern = []
-
-    # Store data in structure for spaCy
-    stk.create_pattern(stonkList)
-
-    # Matching for tweets
-    for tweet in stk.public_tweets:
-        print(tweet.text)
-        stk.token_matching(tweet.text, pattern)
 
     # Run application with specified port and IP address
     app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=True)
