@@ -17,7 +17,12 @@
       </tr>
       {% endfor %}
     </table>
-    <span>
-      {{ner}}
-    </span>
+    <table>
+      {% for item in ner %}
+      <tr>
+         <td>{{item.tweet}}</td>
+         <td>{{item.tokens}}</td>
+      </tr>
+      {% endfor %}
+    </table>
 {% endblock %}
