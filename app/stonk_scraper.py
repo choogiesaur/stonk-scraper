@@ -12,11 +12,14 @@ from google.oauth2 import service_account
 
 class StonkScraper:
     def __init__(self, user='@elonmusk'):
-        self.api_conn = self.get_api()
-        self.user = user
-        self.public_tweets = self.api_conn.user_timeline(screen_name = self.user)
-        self.stonk_list = self.create_stonk_list()
-        self.pattern = self.create_pattern(self.stonk_list)
+        try:
+            self.api_conn = self.get_api()
+            self.user = user
+            self.public_tweets = self.api_conn.user_timeline(screen_name = self.user)
+            self.stonk_list = self.create_stonk_list()
+            self.pattern = self.create_pattern(self.stonk_list)
+        except:
+            print("Could not establish API connection and initialize stonk class")
 
     # Make connection to Twitter API
     def get_api(self):
@@ -151,4 +154,4 @@ if __name__ == "__main__":
     app.add_url_rule('/add-stonks', view_func=routes.add)
 
     # Run application with specified port and IP address
-    app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=True)
+    app.run(host="0.0.0.0", port=8080, debug=True, use_reloader=True, threaded=True)
